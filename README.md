@@ -16,7 +16,7 @@ tags:
   - pytorch
   - autonomous-agents
   - grid-world
-short_description: High-fidelity RL environment for training autonomous drone delivery agents
+short_description: Autonomous drone delivery RL environment.
 ---
 
 <div align="center">
