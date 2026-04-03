@@ -113,7 +113,7 @@ async def list_tasks():
 
 @app.get("/logs")
 async def get_logs():
-    log_path = Path("data/train.log")
+    log_path = BASE_DIR / "data" / "train.log"
     if not log_path.exists():
         return {"logs": []}
     with open(log_path, "r") as f:

@@ -8,7 +8,6 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
-data/*.log
 data/memory.json
 tmp/
 *.egg-info/
