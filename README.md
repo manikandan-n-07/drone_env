@@ -326,6 +326,21 @@ python -m uvicorn server.app:app --host 0.0.0.0 --port 8000
 
 Open `http://localhost:8000` to access the interactive dashboard.
 
+### Training Manual
+
+To train the drone agent, use the `train.py` script with the corresponding task and episode count:
+
+```bash
+# Easy: Train for basic navigation (1000 episodes)
+python train.py --task easy_delivery --episodes 1000
+
+# Medium: Train for longer routes and more targets (2000 episodes)
+python train.py --task medium_delivery --episodes 2000
+
+# Hard: Train for high-density obstacle navigation (5000 episodes)
+python train.py --task hard_delivery --episodes 5000
+```
+
 ### Python SDK Client
 
 ```python
