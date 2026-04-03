@@ -33,7 +33,7 @@ short_description: Autonomous drone delivery RL environment.
 
 **A high-fidelity, end-to-end Reinforcement Learning environment for training and evaluating autonomous drone delivery agents in procedurally generated urban grids.**
 
-[**🌐 Live Demo**](https://huggingface.co/spaces/manikandan-n-07/drone-env) · [**📖 API Docs**](http://localhost:8000/docs) · [**📦 PyPI**](https://pypi.org/project/drone-env) · [**🐛 Issues**](https://github.com/manikandan-n-07/drone-env/issues)
+[**🌐 Live Demo**](https://manikandan-n-07-drone-env.hf.space) · [**📖 API Docs**](http://localhost:8000/docs) · [**📦 PyPI**](https://pypi.org/project/drone-env) · [**🐛 Issues**](https://github.com/manikandan-n-07/drone-env/issues)
 
 </div>
 
@@ -58,7 +58,7 @@ short_description: Autonomous drone delivery RL environment.
 
 ---
 
-## 🔭 Overview
+## Overview
 
 **Drone Delivery Env** is a production-grade, OpenEnv-compatible simulation framework designed for research in deep reinforcement learning and autonomous decision-making. It provides a realistic urban delivery scenario where agents must navigate procedurally generated city grids, avoid obstacles, manage battery resources, and complete multi-waypoint delivery missions.
 
@@ -72,7 +72,7 @@ The framework supports three operational modes:
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The codebase follows a clean separation-of-concerns architecture across four distinct layers:
 
@@ -137,7 +137,7 @@ LLM / RL Agent
 
 ---
 
-## 🌆 Environment Mechanics
+## Environment Mechanics
 
 ### Grid World
 
@@ -207,7 +207,7 @@ class DroneObservation(BaseModel):
 
 ---
 
-## 🧠 Neural Intelligence Layer
+## Neural Intelligence Layer
 
 ### PathQNet Architecture
 
@@ -259,7 +259,7 @@ At each decision point, with probability `ε` the agent explores randomly; other
 
 ---
 
-## 🌐 API Reference
+## API Reference
 
 The FastAPI server exposes the full OpenEnv-compatible interface. Access interactive docs at `http://localhost:8000/docs`.
 
@@ -293,7 +293,7 @@ The FastAPI server exposes the full OpenEnv-compatible interface. Access interac
 
 ---
 
-## ⚡ Quickstart
+## Quickstart
 
 ### Prerequisites
 
@@ -365,7 +365,7 @@ with DroneEnvClient("http://localhost:8000") as client:
 
 ---
 
-## 🧬 Training
+## Training
 
 ### DQN Training Loop
 
@@ -421,7 +421,7 @@ curl http://localhost:8000/logs
 
 ---
 
-## 🤖 LLM-Powered Inference
+## LLM-Powered Inference
 
 `inference.py` provides a fully OpenAI-compatible runner that drives the drone environment using any hosted LLM.
 
@@ -489,7 +489,7 @@ And a concise per-step user prompt with position, battery, target, and distance.
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Build & Run Locally
 
@@ -502,6 +502,19 @@ docker run -p 8000:8000 \
   -e HF_TOKEN=hf_your_token \
   drone-env
 ```
+
+### Local Build Verification
+
+This repository's Docker environment has been verified locally on `desktop-linux`.
+
+| Metric | Value |
+|--------|-------|
+| **Status** | ✅ Completed |
+| **Duration** | 29m 38s |
+| **Revision** | `b958aaf` |
+| **Platform** | linux/amd64 |
+
+`data/docker_build.log` contains the full verification history.
 
 ### Multi-Stage Build Details
 
@@ -520,7 +533,7 @@ CMD ["sh", "-c", "cd /app/env && uvicorn server.app:app --host 0.0.0.0 --port 80
 
 ---
 
-## 🤗 Hugging Face Submission
+## Hugging Face Submission
 
 ### Space Manifest (`openenv.yaml`)
 
@@ -551,6 +564,20 @@ chmod +x validate-submission.sh
 ./validate-submission.sh https://manikandan-n-07-drone-env.hf.space .
 ```
 
+#### Windows (PowerShell) Validation
+If you are on Windows, run these steps manually to validate your Space:
+
+```powershell
+# 1. Ping the Space
+Invoke-RestMethod -Method Post -Uri "https://manikandan-n-07-drone-env.hf.space/reset" -ContentType "application/json" -Body '{}'
+
+# 2. Local Docker Build
+docker build .
+
+# 3. OpenEnv Validate
+openenv validate
+```
+
 A passing run produces:
 ```
 ========================================
@@ -578,7 +605,7 @@ git push hf main
 
 ---
 
-## 📐 Reward Engineering
+## Reward Engineering
 
 The environment uses a **composite reward signal** combining sparse terminal rewards and dense shaping:
 
@@ -599,7 +626,7 @@ $$r_{\text{shaping}} = (d_{\text{before}} - d_{\text{after}}) \times 0.05$$
 
 ---
 
-## 🏆 Grading & Evaluation
+## Grading & Evaluation
 
 Scores are computed by `core/graders.py` using a unified formula:
 
@@ -607,7 +634,7 @@ $$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries\_done}}{\text{del
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 drone_env/
@@ -644,7 +671,7 @@ drone_env/
 
 ---
 
-## ⚙️ Configuration Reference
+## Configuration Reference
 
 ### `pyproject.toml` Dependencies
 
