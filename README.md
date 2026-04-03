@@ -645,7 +645,7 @@ $$R_t = r_{\text{step}} + r_{\text{shaping}} + r_{\text{terminal}}$$
 | $r_{\text{wall}}$ | $-0.20$ | Out-of-bounds penalty |
 | $r_{\text{obstacle}}$ | $-0.10$ to $-0.20$ | Terrain avoidance signal |
 | $r_{\text{delivery}}$ | $+1.0$ to $+0.6$ | Sparse reward — scales with difficulty |
-| $r_{\text{battery\_dead}}$ | $-0.5$ to $-1.0$ | Terminal failure penalty |
+| $r_{\text{battery dead}}$ | $-0.5$ to $-1.0$ | Terminal failure penalty |
 
 Reward shaping uses the **potential-based function**:
 
@@ -657,7 +657,7 @@ $$r_{\text{shaping}} = (d_{\text{before}} - d_{\text{after}}) \times 0.05$$
 
 Scores are computed by `core/graders.py` using a unified formula:
 
-$$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries\_done}}{\text{deliveries\_total}}}_{\text{delivery ratio}} + 0.2 \times \underbrace{\left( 0.5 \cdot \text{battery} + 0.5 \cdot \left(1 - \frac{\text{steps}}{\text{max\_steps}}\right) \right)}_{\text{efficiency}}$$
+$$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries done}}{\text{deliveries total}}}_{\text{delivery ratio}} + 0.2 \times \underbrace{\left( 0.5 \cdot \text{battery} + 0.5 \cdot \left(1 - \frac{\text{steps}}{\text{max steps}}\right) \right)}_{\text{efficiency}}$$
 
 ---
 
