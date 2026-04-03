@@ -784,10 +784,12 @@ name = "drone-env"
 version = "0.2.0"
 source = { editable = "." }
 dependencies = [
+    { name = "fastapi" },
     { name = "openai" },
     { name = "openenv-core", extra = ["core"] },
     { name = "python-multipart" },
     { name = "torch" },
+    { name = "uvicorn" },
 ]
 
 [package.optional-dependencies]
@@ -799,6 +801,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fastapi", specifier = ">=0.115.0" },
     { name = "httpx", marker = "extra == 'dev'" },
     { name = "openai", specifier = ">=1.0.0" },
     { name = "openenv-core", extras = ["core"], specifier = ">=0.2.1" },
@@ -806,6 +809,7 @@ requires-dist = [
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0.0" },
     { name = "python-multipart", specifier = ">=0.0.9" },
     { name = "torch", specifier = ">=2.0.0" },
+    { name = "uvicorn", specifier = ">=0.24.0" },
 ]
 provides-extras = ["dev"]
 

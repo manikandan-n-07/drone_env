@@ -305,8 +305,7 @@ The FastAPI server exposes the full OpenEnv-compatible interface. Access interac
 
 ```bash
 # Clone the repository
-git clone https://huggingface.co/spaces/manikandan-n-07/drone-env
-cd drone-env
+git clone https://huggingface.co/spaces/manikandan-n-07/drone_env
 
 # Install with uv (recommended — uses uv.lock for reproducibility)
 uv sync

@@ -17154,5 +17154,1449 @@
     "deliveries_done": 1,
     "total_reward": 0.25,
     "total_steps": 14
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 1,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 1,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 0,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.1,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 1,
+        "y": 1,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 1,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9167
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        0,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.55,
+    "total_steps": 5
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 2,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 3,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 5,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.1,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 6,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9167
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        0,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.3,
+    "total_steps": 5
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 0,
+        "y": 7,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 1,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 1,
+        "y": 8,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 0,
+        "y": 8,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 0,
+        "y": 8,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9167
+      },
+      {
+        "step": 6,
+        "x": 0,
+        "y": 7,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9
+      },
+      {
+        "step": 7,
+        "x": 1,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.8833
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        3,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.4,
+    "total_steps": 7
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 2,
+        "y": 5,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 2,
+        "y": 5,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9667
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        2,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.2,
+    "total_steps": 2
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 6,
+        "y": 5,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 5,
+        "y": 5,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 5,
+        "y": 4,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 6,
+        "y": 4,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 6,
+        "y": 3,
+        "action": "UP",
+        "reward": -0.1,
+        "battery": 0.9167
+      },
+      {
+        "step": 6,
+        "x": 6,
+        "y": 2,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9
+      },
+      {
+        "step": 7,
+        "x": 5,
+        "y": 2,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.8833
+      },
+      {
+        "step": 8,
+        "x": 5,
+        "y": 2,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.8667
+      },
+      {
+        "step": 9,
+        "x": 5,
+        "y": 3,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.85
+      },
+      {
+        "step": 10,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.2,
+        "battery": 0.8333
+      },
+      {
+        "step": 11,
+        "x": 7,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.8167
+      },
+      {
+        "step": 12,
+        "x": 7,
+        "y": 4,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.8
+      },
+      {
+        "step": 13,
+        "x": 7,
+        "y": 5,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.7833
+      },
+      {
+        "step": 14,
+        "x": 7,
+        "y": 4,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.7667
+      },
+      {
+        "step": 15,
+        "x": 7,
+        "y": 5,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.75
+      },
+      {
+        "step": 16,
+        "x": 6,
+        "y": 5,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.7333
+      },
+      {
+        "step": 17,
+        "x": 5,
+        "y": 5,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.7167
+      },
+      {
+        "step": 18,
+        "x": 5,
+        "y": 4,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.7
+      },
+      {
+        "step": 19,
+        "x": 5,
+        "y": 3,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.6833
+      },
+      {
+        "step": 20,
+        "x": 5,
+        "y": 3,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.6667
+      },
+      {
+        "step": 21,
+        "x": 5,
+        "y": 2,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.65
+      },
+      {
+        "step": 22,
+        "x": 4,
+        "y": 2,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.6333
+      },
+      {
+        "step": 23,
+        "x": 5,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.6167
+      },
+      {
+        "step": 24,
+        "x": 6,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.6
+      },
+      {
+        "step": 25,
+        "x": 6,
+        "y": 2,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.5833
+      },
+      {
+        "step": 26,
+        "x": 5,
+        "y": 2,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.5667
+      },
+      {
+        "step": 27,
+        "x": 5,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.55
+      },
+      {
+        "step": 28,
+        "x": 5,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.5333
+      },
+      {
+        "step": 29,
+        "x": 6,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.5167
+      },
+      {
+        "step": 30,
+        "x": 5,
+        "y": 2,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.5
+      },
+      {
+        "step": 31,
+        "x": 4,
+        "y": 2,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.4833
+      },
+      {
+        "step": 32,
+        "x": 4,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.4667
+      },
+      {
+        "step": 33,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.45
+      },
+      {
+        "step": 34,
+        "x": 3,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.4333
+      },
+      {
+        "step": 35,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.4167
+      },
+      {
+        "step": 36,
+        "x": 5,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.4
+      },
+      {
+        "step": 37,
+        "x": 5,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.3833
+      },
+      {
+        "step": 38,
+        "x": 4,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.3667
+      },
+      {
+        "step": 39,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.35
+      },
+      {
+        "step": 40,
+        "x": 5,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.3333
+      },
+      {
+        "step": 41,
+        "x": 6,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.3167
+      },
+      {
+        "step": 42,
+        "x": 5,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.3
+      },
+      {
+        "step": 43,
+        "x": 4,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.2833
+      },
+      {
+        "step": 44,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.2667
+      },
+      {
+        "step": 45,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.25
+      },
+      {
+        "step": 46,
+        "x": 4,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.2333
+      },
+      {
+        "step": 47,
+        "x": 5,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.2167
+      },
+      {
+        "step": 48,
+        "x": 5,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.2
+      },
+      {
+        "step": 49,
+        "x": 4,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.1833
+      },
+      {
+        "step": 50,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.1667
+      },
+      {
+        "step": 51,
+        "x": 4,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.15
+      },
+      {
+        "step": 52,
+        "x": 3,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.1333
+      },
+      {
+        "step": 53,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.1167
+      },
+      {
+        "step": 54,
+        "x": 3,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.1
+      },
+      {
+        "step": 55,
+        "x": 3,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.0833
+      },
+      {
+        "step": 56,
+        "x": 3,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.0667
+      },
+      {
+        "step": 57,
+        "x": 3,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.05
+      },
+      {
+        "step": 58,
+        "x": 3,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.0333
+      },
+      {
+        "step": 59,
+        "x": 3,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.0167
+      },
+      {
+        "step": 60,
+        "x": 2,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.1,
+        "battery": 0.0
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        0,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -4.75,
+    "total_steps": 60
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 7,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 7,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 6,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 7,
+        "y": 1,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 7,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9167
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        5,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.5,
+    "total_steps": 5
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 4,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 5,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.1,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 7,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 8,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9167
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        7,
+        8
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.3,
+    "total_steps": 5
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 5,
+        "y": 3,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 6,
+        "y": 4,
+        "action": "DOWN",
+        "reward": -0.1,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 5,
+        "y": 4,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 5,
+        "y": 4,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9167
+      },
+      {
+        "step": 6,
+        "x": 5,
+        "y": 3,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9
+      },
+      {
+        "step": 7,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.8833
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        8,
+        8
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.45,
+    "total_steps": 7
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 2,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 2,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9667
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        3,
+        0
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -0.2,
+    "total_steps": 2
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 4,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 4,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 3,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 3,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9167
+      },
+      {
+        "step": 6,
+        "x": 4,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.9
+      },
+      {
+        "step": 7,
+        "x": 3,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.8833
+      },
+      {
+        "step": 8,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.8667
+      },
+      {
+        "step": 9,
+        "x": 4,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.85
+      },
+      {
+        "step": 10,
+        "x": 4,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.8333
+      },
+      {
+        "step": 11,
+        "x": 4,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.8167
+      },
+      {
+        "step": 12,
+        "x": 4,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.8
+      },
+      {
+        "step": 13,
+        "x": 4,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.7833
+      },
+      {
+        "step": 14,
+        "x": 4,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.7667
+      },
+      {
+        "step": 15,
+        "x": 4,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.75
+      },
+      {
+        "step": 16,
+        "x": 4,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.7333
+      },
+      {
+        "step": 17,
+        "x": 4,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.7167
+      },
+      {
+        "step": 18,
+        "x": 4,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.7
+      },
+      {
+        "step": 19,
+        "x": 5,
+        "y": 1,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.6833
+      },
+      {
+        "step": 20,
+        "x": 4,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.6667
+      },
+      {
+        "step": 21,
+        "x": 4,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.65
+      },
+      {
+        "step": 22,
+        "x": 4,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.6333
+      },
+      {
+        "step": 23,
+        "x": 3,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.6167
+      },
+      {
+        "step": 24,
+        "x": 3,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.6
+      },
+      {
+        "step": 25,
+        "x": 3,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.5833
+      },
+      {
+        "step": 26,
+        "x": 3,
+        "y": 0,
+        "action": "UP",
+        "reward": -0.25,
+        "battery": 0.5667
+      },
+      {
+        "step": 27,
+        "x": 4,
+        "y": 0,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.55
+      },
+      {
+        "step": 28,
+        "x": 3,
+        "y": 0,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.5333
+      },
+      {
+        "step": 29,
+        "x": 3,
+        "y": 0,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.5167
+      },
+      {
+        "step": 30,
+        "x": 3,
+        "y": 1,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.5
+      },
+      {
+        "step": 31,
+        "x": 2,
+        "y": 1,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.4833
+      },
+      {
+        "step": 32,
+        "x": 2,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.4667
+      },
+      {
+        "step": 33,
+        "x": 2,
+        "y": 2,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.45
+      },
+      {
+        "step": 34,
+        "x": 2,
+        "y": 3,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.4333
+      },
+      {
+        "step": 35,
+        "x": 2,
+        "y": 2,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.4167
+      },
+      {
+        "step": 36,
+        "x": 2,
+        "y": 3,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.4
+      },
+      {
+        "step": 37,
+        "x": 2,
+        "y": 3,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.3833
+      },
+      {
+        "step": 38,
+        "x": 3,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.3667
+      },
+      {
+        "step": 39,
+        "x": 4,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.35
+      },
+      {
+        "step": 40,
+        "x": 3,
+        "y": 3,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.3333
+      },
+      {
+        "step": 41,
+        "x": 4,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.3167
+      },
+      {
+        "step": 42,
+        "x": 4,
+        "y": 2,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.3
+      },
+      {
+        "step": 43,
+        "x": 4,
+        "y": 3,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.2833
+      },
+      {
+        "step": 44,
+        "x": 5,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.1,
+        "battery": 0.2667
+      },
+      {
+        "step": 45,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.25
+      },
+      {
+        "step": 46,
+        "x": 6,
+        "y": 4,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.2333
+      },
+      {
+        "step": 47,
+        "x": 5,
+        "y": 4,
+        "action": "LEFT",
+        "reward": -0.05,
+        "battery": 0.2167
+      },
+      {
+        "step": 48,
+        "x": 5,
+        "y": 4,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.2
+      },
+      {
+        "step": 49,
+        "x": 5,
+        "y": 5,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.1833
+      },
+      {
+        "step": 50,
+        "x": 5,
+        "y": 4,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.1667
+      },
+      {
+        "step": 51,
+        "x": 5,
+        "y": 3,
+        "action": "UP",
+        "reward": -0.2,
+        "battery": 0.15
+      },
+      {
+        "step": 52,
+        "x": 6,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.1333
+      },
+      {
+        "step": 53,
+        "x": 6,
+        "y": 2,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.1167
+      },
+      {
+        "step": 54,
+        "x": 6,
+        "y": 2,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.1
+      },
+      {
+        "step": 55,
+        "x": 7,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.0833
+      },
+      {
+        "step": 56,
+        "x": 7,
+        "y": 1,
+        "action": "UP",
+        "reward": -0.05,
+        "battery": 0.0667
+      },
+      {
+        "step": 57,
+        "x": 7,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.05
+      },
+      {
+        "step": 58,
+        "x": 7,
+        "y": 1,
+        "action": "WAIT",
+        "reward": -0.1,
+        "battery": 0.0333
+      },
+      {
+        "step": 59,
+        "x": 7,
+        "y": 2,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.0167
+      },
+      {
+        "step": 60,
+        "x": 7,
+        "y": 3,
+        "action": "DOWN",
+        "reward": -0.05,
+        "battery": 0.0
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        9,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": -4.5,
+    "total_steps": 60
   }
 ]
