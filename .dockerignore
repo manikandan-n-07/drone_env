@@ -1,0 +1,21 @@
+# Exclude large and unnecessary files from Docker build
+.git/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+data/*.log
+data/memory.json
+tmp/
+*.egg-info/
+uv.lock
+api_output.txt
+final_api_check.txt
+test_output.txt
+validate-submission.sh
+# Any logs or temporary results
+*.log
