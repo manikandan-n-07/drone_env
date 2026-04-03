@@ -29,9 +29,9 @@ short_description: Autonomous drone delivery RL environment.
 <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 
 # 🚁 Drone Delivery Env
-### Autonomous Neural Navigation Framework
+### Powered by Team SkyRelic — Autonomous Neural Navigation Framework
 
-**A high-fidelity, end-to-end Reinforcement Learning environment for training and evaluating autonomous drone delivery agents in procedurally generated urban grids.**
+**A high-fidelity, end-to-end Reinforcement Learning environment developed by Team SkyRelic. This framework is designed for training and evaluating autonomous agents on the critical mission of delivering drone parcels across procedurally generated urban grids.**
 
 [**🌐 Live Demo**](https://manikandan-n-07-drone-env.hf.space) · [**📖 API Docs**](http://localhost:8000/docs) · [**📦 PyPI**](https://pypi.org/project/drone-env) · [**🐛 Issues**](https://github.com/manikandan-n-07/drone-env/issues)
 
