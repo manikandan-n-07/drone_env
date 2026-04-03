@@ -6,13 +6,13 @@ from openenv.core.env_server.interfaces import Environment
 from openenv.core.env_server.types import State
 
 try:
-    from ..models import DroneAction, DroneObservation
+    from drone_env.models import DroneAction, DroneObservation
 except ImportError:
     from models import DroneAction, DroneObservation
 
 # Import map generator
 try:
-    from .map_generator import generate_grid
+    from drone_env.server.map_generator import generate_grid
 except ImportError:
     from map_generator import generate_grid
 

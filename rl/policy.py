@@ -5,7 +5,7 @@ Epsilon-greedy policy for exploration during training.
 from __future__ import annotations
 import random
 import torch
-from rl.model import PathQNet, ACTIONS
+from drone_env.rl.model import PathQNet, ACTIONS
 
 
 class EpsilonGreedyPolicy:

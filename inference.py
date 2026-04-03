@@ -25,8 +25,8 @@ def load_dotenv(path: Path):
 load_dotenv(ROOT_DIR / ".env")
 
 from openai import OpenAI
-from server.grid_world_environment import DroneDeliveryEnvironment
-from models import DroneAction
+from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
+from drone_env.models import DroneAction
 
 # MANDATORY Environment Variables
 # Determine the best API key and base URL combination

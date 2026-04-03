@@ -19,9 +19,9 @@ ROOT_DIR = Path(__file__).parent
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from rl.model import PathQNet, ACTIONS, ACTION2IDX, CELL2IDX
-from server.grid_world_environment import DroneDeliveryEnvironment
-from models import DroneAction
+from drone_env.rl.model import PathQNet, ACTIONS, ACTION2IDX, CELL2IDX
+from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
+from drone_env.models import DroneAction
 
 # ── Hyperparameters ───────────────────────────────────────────────────────────
 GAMMA = 0.99

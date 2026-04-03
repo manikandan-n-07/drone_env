@@ -4,7 +4,7 @@ Handles initialization and management of the DroneState.
 """
 import uuid
 from typing import List, Tuple
-from models import DroneState
+from drone_env.models import DroneState
 
 
 def new_episode_state(

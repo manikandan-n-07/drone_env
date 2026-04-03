@@ -18,14 +18,14 @@ except ImportError:
         @property
         def state(self): raise NotImplementedError
 
-from models import DroneAction, DroneObservation, DroneState
-from core.grid_generator import generate_city_map, EMOJI, LEGEND
-from core.tasks import TASK_CONFIG
-from core.drone import compute_next_pos, drain_battery
-from core.obstacles import check_move
-from core.state_manager import new_episode_state
-from core.graders import GRADERS
-from rl.trainer import record_episode
+from drone_env.models import DroneAction, DroneObservation, DroneState
+from drone_env.core.grid_generator import generate_city_map, EMOJI, LEGEND
+from drone_env.core.tasks import TASK_CONFIG
+from drone_env.core.drone import compute_next_pos, drain_battery
+from drone_env.core.obstacles import check_move
+from drone_env.core.state_manager import new_episode_state
+from drone_env.core.graders import GRADERS
+from drone_env.rl.trainer import record_episode
 
 
 class DroneDeliveryEnvironment(Environment):

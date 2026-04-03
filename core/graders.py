@@ -2,7 +2,7 @@
 drone_delivery_env/core/graders.py
 Evaluation logic for scoring Drone Delivery missions.
 """
-from models import DroneState
+from drone_env.models import DroneState
 
 
 def compute_grade(state: DroneState, max_steps: float) -> float:

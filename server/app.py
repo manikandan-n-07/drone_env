@@ -23,11 +23,11 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 # Unified Imports - Root-relative
-from models import DroneAction, DroneObservation, DroneState
-from server.grid_world_environment import DroneDeliveryEnvironment
-from core.tasks import TASK_CONFIG
-from core.graders import GRADERS
-from rl.trainer import PathLearner, get_action_from_policy
+from drone_env.models import DroneAction, DroneObservation, DroneState
+from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
+from drone_env.core.tasks import TASK_CONFIG
+from drone_env.core.graders import GRADERS
+from drone_env.rl.trainer import PathLearner, get_action_from_policy
 
 app = FastAPI(
     title="Drone Delivery OpenEnv",
