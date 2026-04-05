@@ -162,6 +162,20 @@ async def root():
         return FileResponse(index_path)
     return {"name": "Drone Delivery OpenEnv", "ui": "/ui"}
 
+@app.get("/favicon.png")
+async def favicon_png():
+    icon_path = BASE_DIR / "src" / "img" / "icon.png"
+    if icon_path.exists():
+        # Set headers to prevent aggressive caching during development
+        headers = {"Cache-Control": "no-cache, no-store, must-revalidate"}
+        return FileResponse(icon_path, media_type="image/png", headers=headers)
+    raise HTTPException(404, detail="Icon not found.")
+
+@app.get("/favicon.ico")
+async def favicon_ico():
+    """Redirect .ico requests to our branded .png version."""
+    return await favicon_png()
+
 @app.get("/ui")
 async def ui():
     index_path = STATIC_DIR / "index.html"

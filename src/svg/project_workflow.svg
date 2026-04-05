@@ -1,0 +1,73 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles and Glows -->
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffb2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#06080f" rx="15" />
+
+  <!-- CLUSTERS -->
+  <!-- Frontend -->
+  <rect x="50" y="50" width="220" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="#00e5ff" stroke-width="2" />
+  <text x="60" y="75" fill="#00e5ff" font-family="Arial" font-weight="bold" font-size="14">FRONTEND (Browser)</text>
+  <text x="70" y="110" fill="#e8f4ff" font-family="Arial" font-size="12">index.html (Dashboard)</text>
+  <text x="70" y="135" fill="#e8f4ff" font-family="Arial" font-size="12">script.js (Telemetry Polling)</text>
+  <text x="70" y="160" fill="#e8f4ff" font-family="Arial" font-size="12">style.css (Neon Theme)</text>
+
+  <!-- Backend -->
+  <rect x="350" y="50" width="250" height="220" rx="10" fill="rgba(255,255,255,0.03)" stroke="#00ffb2" stroke-width="2" />
+  <text x="360" y="75" fill="#00ffb2" font-family="Arial" font-weight="bold" font-size="14">SERVER (FastAPI)</text>
+  <text x="370" y="110" fill="#e8f4ff" font-family="Arial" font-size="12">app.py (API Routes)</text>
+  <text x="370" y="135" fill="#e8f4ff" font-family="Arial" font-size="12">drone_env_environment.py</text>
+  <text x="370" y="160" fill="#e8f4ff" font-family="Arial" font-size="12">grid_world_environment.py</text>
+
+  <!-- Core Logic -->
+  <rect x="700" y="50" width="220" height="220" rx="10" fill="rgba(255,255,255,0.03)" stroke="#ffb300" stroke-width="2" />
+  <text x="710" y="75" fill="#ffb300" font-family="Arial" font-weight="bold" font-size="14">CORE (Logistics)</text>
+  <text x="720" y="110" fill="#e8f4ff" font-family="Arial" font-size="12">task.py (Mission Levels)</text>
+  <text x="720" y="135" fill="#e8f4ff" font-family="Arial" font-size="12">grid_generator.py (Map)</text>
+  <text x="720" y="160" fill="#e8f4ff" font-family="Arial" font-size="12">state_manager.py (Memory)</text>
+  <text x="720" y="185" fill="#e8f4ff" font-family="Arial" font-size="12">graders.py (Score Logic)</text>
+
+  <!-- RL Engine -->
+  <rect x="350" y="320" width="250" height="180" rx="10" fill="rgba(255,255,255,0.03)" stroke="#b388ff" stroke-width="2" />
+  <text x="360" y="345" fill="#b388ff" font-family="Arial" font-weight="bold" font-size="14">RL ENGINE (Neural)</text>
+  <text x="370" y="380" fill="#e8f4ff" font-family="Arial" font-size="12">trainer.py (DQN Loop)</text>
+  <text x="370" y="405" fill="#e8f4ff" font-family="Arial" font-size="12">model.py (PyTorch ResNet)</text>
+  <text x="370" y="430" fill="#e8f4ff" font-family="Arial" font-size="12">policy.py (Action Strategy)</text>
+
+  <!-- Inference -->
+  <rect x="50" y="320" width="220" height="120" rx="10" fill="rgba(255,255,255,0.03)" stroke="#ff4d6d" stroke-width="2" />
+  <text x="60" y="345" fill="#ff4d6d" font-family="Arial" font-weight="bold" font-size="14">BENCHMARK (LLM)</text>
+  <text x="70" y="380" fill="#e8f4ff" font-family="Arial" font-size="12">inference.py (Evaluation)</text>
+  <text x="70" y="405" fill="#e8f4ff" font-family="Arial" font-size="12">HF_TOKEN / OpenAI API</text>
+
+  <!-- Deployment -->
+  <rect x="700" y="320" width="220" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="#e8f4ff" stroke-width="2" />
+  <text x="710" y="345" fill="#e8f4ff" font-family="Arial" font-weight="bold" font-size="14">DEPLOYMENT</text>
+  <text x="720" y="380" fill="#e8f4ff" font-family="Arial" font-size="12">Dockerfile (Production)</text>
+  <text x="720" y="405" fill="#e8f4ff" font-family="Arial" font-size="12">openenv.yaml (Metadata)</text>
+  <text x="720" y="430" fill="#e8f4ff" font-family="Arial" font-size="12">README.md (Guide)</text>
+
+  <!-- CONNECTORS (Lines) -->
+  <line x1="270" y1="140" x2="350" y2="140" stroke="#00e5ff" stroke-width="1.5" />
+  <line x1="600" y1="140" x2="700" y2="140" stroke="#00ffb2" stroke-width="1.5" />
+  <line x1="475" y1="270" x2="475" y2="320" stroke="#b388ff" stroke-width="1.5" />
+  <line x1="270" y1="380" x2="350" y2="380" stroke="#ff4d6d" stroke-width="1.5" stroke-dasharray="5,5" />
+  <line x1="600" y1="400" x2="700" y2="400" stroke="#e8f4ff" stroke-width="1.5" stroke-dasharray="5,5" />
+
+  <!-- Labels -->
+  <text x="285" y="130" fill="#00e5ff" font-size="9">JSON/HTTP</text>
+  <text x="610" y="130" fill="#ffb300" font-size="9">Internal State</text>
+
+  <!-- Legend -->
+  <text x="780" y="570" fill="rgba(255,255,255,0.3)" font-size="12" font-style="italic">Project Architecture — Team SkyRelic</text>
+</svg>

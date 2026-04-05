@@ -19684,5 +19684,71 @@
     "deliveries_done": 1,
     "total_reward": 0.75,
     "total_steps": 4
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 3,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9833
+      },
+      {
+        "step": 2,
+        "x": 4,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9667
+      },
+      {
+        "step": 3,
+        "x": 5,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.95
+      },
+      {
+        "step": 4,
+        "x": 6,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.05,
+        "battery": 0.9333
+      },
+      {
+        "step": 5,
+        "x": 7,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": -0.1,
+        "battery": 0.9167
+      },
+      {
+        "step": 6,
+        "x": 8,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": 0.95,
+        "battery": 0.9
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        8,
+        7
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 0.65,
+    "total_steps": 6
   }
 ]

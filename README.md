@@ -53,6 +53,7 @@ short_description: Autonomous drone delivery RL environment.
 - [Hugging Face Submission](#hugging-face-submission)
 - [Reward Engineering](#reward-engineering)
 - [Grading & Evaluation](#grading--evaluation)
+- [Project Architecture](#project-architecture)
 - [Project Structure](#project-structure)
 - [Configuration Reference](#configuration-reference)
 
@@ -658,6 +659,55 @@ $$r_{\text{shaping}} = (d_{\text{before}} - d_{\text{after}}) \times 0.05$$
 Scores are computed by `core/graders.py` using a unified formula:
 
 $$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries done}}{\text{deliveries total}}}_{\text{delivery ratio}} + 0.2 \times \underbrace{\left( 0.5 \cdot \text{battery} + 0.5 \cdot \left(1 - \frac{\text{steps}}{\text{max steps}}\right) \right)}_{\text{efficiency}}$$
+
+---
+
+## 🚀 The Life of a Parcel (End-to-End Flow)
+
+If you want to understand how **SkyRelic** works "at a glance," follow the journey of a single delivery:
+
+```mermaid
+graph LR
+    subgraph "1. Initialization"
+    A[User] -- "Clicks Reset" --> B(FastAPI)
+    B -- "CityGen" --> C[New Map Generated]
+    end
+
+    subgraph "2. Decision Loop"
+    C -- "Telemetry" --> D{Dashboard UI}
+    D -- "State Info" --> E[Neural Brain]
+    E -- "Action (UP/DOWN/etc)" --> B
+    end
+
+    subgraph "3. Physics & Scoring"
+    B -- "Calculate" --> F{World Engine}
+    F -- "Collision/Battery" --> G[Updated State]
+    G -- "Success?" --> H((🏆 Score))
+    end
+
+    G -.-> D
+```
+
+### 📦 The Mission Journey:
+1.  **THE SPARK** ⚡: You click **Reset** in your browser. The Dashboard sends a request to the **FastAPI Server**.
+2.  **THE CREATION** 🏗️: The **Core Logic** generates a random 10x10 city with roads 🛣️, buildings 🏢, and trees 🌳. It places a **Parcel** 📦 at a random location.
+3.  **THE SIGHT** 👁️: The server sends the "State" (JSON) back to the **UI Dashboard**. You see the drone appear in the grid.
+4.  **THE BRAIN** 🧠: When you click **Start**, the **Neural Engine** (RL) looks at the map, calculates the distance, and picks the best direction.
+5.  **THE FLIGHT** 🛸: The drone moves! The **Physics Engine** drains its battery and checks for crashes against buildings.
+6.  **THE VICTORY** 🏁: Once the drone reaches the 📦, the **Grader** calculates your efficiency and updates your score!
+
+---
+
+## Project Architecture
+
+![Project Workflow](./src/svg/project_workflow.svg)
+
+The **SkyRelic** ecosystem is divided into four primary layers, interconnected via JSON telemetry and Python API endpoints:
+
+1.  **Frontend Dashboard**: A high-speed, browser-based UI that polls telemetry from the FastAPI backend and renders a real-time 2D grid of the drone's mission.
+2.  **FastAPI Server**: The communication hub that bridges the browser UI with the Python environment, managing routes for `/step`, `/reset`, and `/predict`.
+3.  **Neural RL Engine**: A PyTorch-powered Deep Q-Network (DQN) that processes urban grid data to select optimal flight paths.
+4.  **Core Logistics Env**: The "World Engine" which simulates urban terrain, battery physics, and parcel delivery missions.
 
 ---
 
