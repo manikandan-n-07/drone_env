@@ -1,8 +1,8 @@
 ---
 title: SkyRelic Drone Delivery Environment
 emoji: 🚁
-colorFrom: cyan
-colorTo: blue
+colorFrom: blue
+colorTo: indigo
 sdk: docker
 app_port: 8000
 pinned: true
