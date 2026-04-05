@@ -57,6 +57,7 @@ short_description: Autonomous drone delivery RL environment.
 - [Project Architecture](#project-architecture)
 - [Project Structure](#project-structure)
 - [Configuration Reference](#configuration-reference)
+- [Author](#author)
 
 ---
 
@@ -820,3 +821,22 @@ Build system uses [Meta's BSD-licensed](https://opensource.org/licenses/BSD-3-Cl
 *Advancing autonomous agent research through high-fidelity simulation*
 
 </div>
+
+
+---
+
+## Author
+
+<div align="center">
+
+# Manikandan N
+
+*Developer & Creator of Drone Delivery Environment*
+
+[![GitHub](https://img.shields.io/badge/GitHub-@manikandan--n--07-181717?style=flat-square&logo=github)](https://github.com/manikandan-n-07)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manikandan_N-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/manikandan-n-35a1bb294)
+[![Email](https://img.shields.io/badge/Email-manilunar07@gmail.com-D14836?style=flat-square&logo=gmail)](mailto:maniluna07@gmail.com)
+
+</div>
+
+---
