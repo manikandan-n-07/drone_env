@@ -1,5 +1,5 @@
 ---
-title: SkyRelic: Drone Delivery Environment
+title: SkyRelic Drone Delivery Environment
 emoji: 🚁
 colorFrom: cyan
 colorTo: blue
