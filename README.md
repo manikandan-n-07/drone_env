@@ -1,8 +1,7 @@
----
-title: Drone Delivery Env — Drone Delivery OpenEnv
+title: SkyRelic: Drone Delivery Environment
 emoji: 🚁
-colorFrom: indigo
-colorTo: purple
+colorFrom: cyan
+colorTo: blue
 sdk: docker
 app_port: 8000
 pinned: true
