@@ -29,38 +29,21 @@ from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
 from drone_env.models import DroneAction
 
 # MANDATORY Environment Variables
-# Determine the best API key and base URL combination
+# Defaults are set ONLY for API_BASE_URL and MODEL_NAME as per checklist
 HF_TOKEN = os.getenv("HF_TOKEN")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1/")
+MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-7B-Instruct")
+
+# For local testing if no HF_TOKEN is provided but OPENAI_API_KEY is
 OPENAI_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("API_KEY")
 
-# Default Base URLs
-HF_DEFAULT_URL = "https://router.huggingface.co/v1/"
-OPENAI_DEFAULT_URL = "https://api.openai.com/v1"
+# Final API_KEY selection (Must not have a hardcoded default)
+API_KEY = HF_TOKEN if HF_TOKEN else OPENAI_KEY
 
-# QWEN MODEL OPTIONS:
-# - Qwen/Qwen2.5-72B-Instruct (High Intelligence, may require credits)
-# - Qwen/Qwen2.5-7B-Instruct (Fast, FREE tier)
-# - Qwen/QwQ-32B-Preview (Reasoning focused)
-DEFAULT_HF_MODEL = "Qwen/Qwen2.5-7B-Instruct"
-
-# Priority logic: 
-# 1. Use HF_TOKEN if available and no specific URL is set (standard for benchmarks)
-# 2. Otherwise use OpenAI key
-if HF_TOKEN and not os.getenv("API_BASE_URL"):
-    API_KEY = HF_TOKEN
-    API_BASE_URL = HF_DEFAULT_URL
-elif OPENAI_KEY:
-    API_KEY = OPENAI_KEY
-    API_BASE_URL = os.getenv("API_BASE_URL") or OPENAI_DEFAULT_URL
-else:
-    API_KEY = HF_TOKEN or "mock_key"
-    API_BASE_URL = os.getenv("API_BASE_URL") or HF_DEFAULT_URL
-
-# Priority for model name: explicit ENV > .env OPENAI_MODEL_NAME > benchmark default
-MODEL_NAME = os.getenv("MODEL_NAME") or os.getenv("OPENAI_MODEL_NAME") or DEFAULT_HF_MODEL
-TASK_NAME = os.getenv("DRONE_TASK", "easy_delivery")
+# Optional variables
+DRONE_TASK = os.getenv("DRONE_TASK", "easy_delivery")
 BENCHMARK = os.getenv("DRONE_BENCHMARK", "drone_env_v1")
-IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME") # For benchmark consistency
+LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME") # Optional for Docker testing
 
 # Hyperparameters
 MAX_STEPS = 60
@@ -142,11 +125,11 @@ async def main() -> None:
     score_val = 0.0
     success = False
 
-    log_start(task=TASK_NAME, env=BENCHMARK, model=MODEL_NAME)
+    log_start(task=DRONE_TASK, env=BENCHMARK, model=MODEL_NAME)
 
     try:
         # Initial reset
-        obs = env.reset(DroneAction(task_name=TASK_NAME))
+        obs = env.reset(DroneAction(task_name=DRONE_TASK))
         
         for step in range(1, MAX_STEPS + 1):
             if obs.done:
