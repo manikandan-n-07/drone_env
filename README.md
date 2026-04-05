@@ -53,6 +53,7 @@ short_description: Autonomous drone delivery RL environment.
 - [Hugging Face Submission](#hugging-face-submission)
 - [Reward Engineering](#reward-engineering)
 - [Grading & Evaluation](#grading--evaluation)
+- [The Life of a Parcel (End-to-End Flow)](#the-life-of-a-parcel-end-to-end-flow)
 - [Project Architecture](#project-architecture)
 - [Project Structure](#project-structure)
 - [Configuration Reference](#configuration-reference)
@@ -662,7 +663,7 @@ $$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries done}}{\text{deli
 
 ---
 
-## 🚀 The Life of a Parcel (End-to-End Flow)
+## The Life of a Parcel (End-to-End Flow)
 
 If you want to understand how **SkyRelic** works "at a glance," follow the journey of a single delivery:
 
