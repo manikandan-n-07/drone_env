@@ -9,6 +9,7 @@ __pycache__/
 .coverage
 htmlcov/
 tmp/
+data/memory.json
 *.egg-info/
 uv.lock
 api_output.txt
