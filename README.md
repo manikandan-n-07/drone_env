@@ -57,6 +57,7 @@ short_description: Autonomous drone delivery RL environment.
 - [Project Architecture](#project-architecture)
 - [Project Structure](#project-structure)
 - [Configuration Reference](#configuration-reference)
+- [Phase 2 Validation Updates](#phase-2-validation-updates)
 - [Author](#author)
 
 ---
@@ -94,16 +95,15 @@ drone_env/
 │   └── trainer.py               # Path analytics & learning engine
 ├── server/                      # Interface Layer
 │   ├── app.py                   # FastAPI server & Grader discovery
-│   ├── grid_world_environment.py # NEW Main simulation environment
-│   ├── drone_env_environment.py.bak # Legacy logic (Deactivated)
+│   ├── grid_world_environment.py # Main simulation environment
 │   ├── map_generator.py         # Procedural map generation
 │   └── static/                  # Dashboard Assets
 │       ├── index.html           # Interactive dashboard layout
 │       ├── script.js            # Frontend logic & Mission modal
 │       ├── style.css            # Cyan/Amber aesthetic styles
-│       └── favicon.png          # SkyRelic Branding
+│       └── favicon.png          # SkyRelic Branding (favicon)
 ├── data/                        # Persistence Layer
-│   ├── memory.json              # Historical episode logs
+│   ├── memory.json              # Historical episode logs (JSON)
 │   └── train.log                # Neural training logs
 ├── tests/                       # Validation Layer
 │   ├── test_api.py              # Endpoint integration tests
@@ -669,7 +669,7 @@ $$R_t = r_{\text{step}} + r_{\text{shaping}} + r_{\text{terminal}}$$
 
 The following table summarizes the mission parameters and reward weights defined in `core/tasks.py`. These constants drive the environment's physics and feedback loop.
 
-| Parameter | Easy Delivery | Medium Delivery | Hard Delivery |
+| Parameter | Easy Delivery (10%) | Medium Delivery (15%) | Hard Delivery (25%) |
 | :--- | :--- | :--- | :--- |
 | **Grid Dimensions** | 10 x 10 | 14 x 14 | 18 x 18 |
 | **Buildings / Trees** | 4 / 4 | 8 / 6 | 12 / 10 |
@@ -677,12 +677,12 @@ The following table summarizes the mission parameters and reward weights defined
 | **Deliveries Req.** | 1 | 3 | 5 |
 | **Max Steps / Battery** | 60 | 100 | 160 |
 | **$r_{\text{delivery}}$** | +0.95 | +0.90 | +0.85 |
-| **$r_{\text{step}}$** | +0.05 | +0.04 | +0.03 |
-| **$r_{\text{wait}}$** | +0.01 | +0.01 | +0.01 |
-| **$r_{\text{collision}}$** | +0.02 | +0.02 | +0.01 |
-| **$r_{\text{obstacle}}$** | +0.02 | +0.02 | +0.01 |
-| **$r_{\text{battery-dead}}$** | +0.01 | +0.01 | +0.01 |
-| **$r_{\text{wall/blocked}}$** | +0.01 | +0.01 | +0.01 |
+| **$r_{\text{step}}$** | +0.10 | +0.15 | +0.25 |
+| **$r_{\text{wait}}$** | +0.10 | +0.15 | +0.25 |
+| **$r_{\text{collision}}$** | +0.10 | +0.15 | +0.25 |
+| **$r_{\text{obstacle}}$** | +0.10 | +0.15 | +0.25 |
+| **$r_{\text{battery-dead}}$** | +0.10 | +0.15 | +0.25 |
+| **$r_{\text{wall/blocked}}$** | +0.10 | +0.15 | +0.25 |
 
 ---
 
@@ -876,6 +876,31 @@ Build system uses [Meta's BSD-licensed](https://opensource.org/licenses/BSD-3-Cl
 
 </div>
 
+
+---
+
+## Phase 2 Validation Updates
+
+The **SkyRelic** environment has been updated to fully comply with the **Meta PyTorch Hackathon Phase 2 Deep Validation** requirements.
+
+### 🛡️ Validation Fixes
+- **Strict Score Clamping**: All mission scores and rewards are now strictly clamped to the **(0.01, 0.99)** range in `core/graders.py` and `server/grid_world_environment.py`. This prevents the "out of range" (exactly 0.0 or 1.0) failures reported by the automated validator.
+- **Differentiated Reward Scalars**: To provide clearer learning signals, reward scalars for step, wait, and collision penalties have been updated to difficulty-specific tiers:
+    - **Easy Mission**: 0.10 (10%)
+    - **Medium Mission**: 0.15 (15%)
+    - **Hard Mission**: 0.25 (25%)
+- **Task Discovery**: Fully registered 3 tasks (`easy_delivery`, `medium_delivery`, `hard_delivery`) with corresponding graders in `openenv.yaml`. The server now exposes a `/graders` endpoint for official task discovery.
+
+### 📊 Dashboard UI Improvements
+- **Technical Specifications Legend**: A new side-by-side comparison table has been added to the dashboard, allowing manual reviewers to verify grid sizes and reward weights for all 3 mission levels at a glance.
+- **Auto-Analysis Engine**: Upon mission completion, the dashboard now automatically triggers an asynchronous call to `/analyse`, providing immediate feedback on **Average Reward**, **Success Trends**, and **Action Distributions**.
+- **Refined Analytics**: Removed redundant "(Success Trend)" text from the completion modal for a cleaner, professional report format.
+
+### 📡 API & Backend
+- **New Endpoints**: 
+  - `/graders`: Returns a list of all registered evaluation functions.
+  - `/tasks`: Exposes live configuration data directly from `core/tasks.py`.
+  - `/analyse/{task_id}`: Provides deep RL analytics from `memory.json`.
 
 ---
 

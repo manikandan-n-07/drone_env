@@ -131,7 +131,10 @@ async def main() -> None:
         # Initial reset
         obs = env.reset(DroneAction(task_name=DRONE_TASK))
         
-        for step in range(1, MAX_STEPS + 1):
+        # Use dynamic max_steps from environment config
+        current_max_steps = int(obs.max_steps) if obs.max_steps else MAX_STEPS
+        
+        for step in range(1, current_max_steps + 1):
             if obs.done:
                 break
 
@@ -155,7 +158,7 @@ async def main() -> None:
                 break
 
         # Calculate final metrics
-        score_val = float(obs.score) / 100.0  # Normalize score from [0-100] to [0-1]
+        score_val = float(obs.score)  # Graded score is already normalized to [0.01, 0.99]
         success = (obs.deliveries_done == obs.deliveries_total) if obs.deliveries_total > 0 else False
 
     except Exception as e:

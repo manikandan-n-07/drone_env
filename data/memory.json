@@ -5,64 +5,6 @@
       {
         "step": 1,
         "x": 6,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 7,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 8,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.1,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 9,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9333
-      },
-      {
-        "step": 5,
-        "x": 9,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9167
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        9,
-        8
-      ]
-    ],
-    "deliveries_done": 0,
-    "total_reward": -0.5,
-    "total_steps": 5
-  },
-  {
-    "task": "easy_delivery",
-    "steps": [
-      {
-        "step": 1,
-        "x": 6,
         "y": 0,
         "action": "UP",
         "reward": -0.05,
@@ -14903,5 +14845,95 @@
     "deliveries_done": 1,
     "total_reward": 1.35,
     "total_steps": 4
+  },
+  {
+    "task": "easy_delivery",
+    "steps": [
+      {
+        "step": 1,
+        "x": 0,
+        "y": 8,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 0,
+        "y": 7,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 3,
+        "x": 0,
+        "y": 6,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 0,
+        "y": 5,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 5,
+        "x": 0,
+        "y": 4,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 6,
+        "x": 0,
+        "y": 3,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 7,
+        "x": 0,
+        "y": 2,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.8833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 8,
+        "x": 1,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": 1.05,
+        "battery": 0.8667,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        1,
+        2
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.75,
+    "total_steps": 8
   }
 ]
