@@ -27,4 +27,4 @@ ENV HF_HOME=/tmp/.cache
 
 # Command to run the FastAPI server
 # This calls the main function in server/app.py which starts uvicorn
-CMD ["python", "drone_env/server/app.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "server/app.py", "--host", "0.0.0.0", "--port", "8000"]

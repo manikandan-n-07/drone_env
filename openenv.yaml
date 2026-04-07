@@ -2,7 +2,7 @@ spec_version: 1
 name: drone_env
 type: space
 runtime: fastapi
-app: drone_env.server.app:app
+app: server.app:app
 port: 8000
 tasks:
   - id: easy_delivery

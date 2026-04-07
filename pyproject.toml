@@ -35,3 +35,4 @@ server = "drone_env.server.app:main"
 [tool.setuptools]
 include-package-data = true
 packages = ["drone_env", "drone_env.server", "drone_env.core", "drone_env.rl"]
+package-dir = { "drone_env" = ".", "drone_env.server" = "server", "drone_env.core" = "core", "drone_env.rl" = "rl" }

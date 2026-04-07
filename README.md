@@ -82,38 +82,37 @@ The codebase follows a clean separation-of-concerns architecture across four dis
 
 ```
 .
-├── drone_env/                   # Core Package Subdirectory
-│   ├── core/                    # Simulation Logic Layer
-│   │   ├── drone.py             # Movement physics & battery drain
-│   │   ├── graders.py           # Unified scoring logic (0.01 - 0.99)
-│   │   ├── grid_generator.py    # Map generation logic
-│   │   ├── obstacles.py         # Collision & terrain detection
-│   │   ├── state_manager.py     # Episodic state management
-│   │   └── tasks.py             # Mission difficulty configurations
-│   ├── rl/                      # Intelligence Layer
-│   │   ├── model.py             # Neural network architecture (DQN)
-│   │   ├── policy.py            # Action selection policies
-│   │   └── trainer.py           # Path analytics & learning engine
-│   ├── server/                  # Interface Layer
-│   │   ├── app.py               # FastAPI server & Grader discovery
-│   │   ├── grid_world_environment.py # Main simulation environment
-│   │   ├── map_generator.py     # Procedural map generation
-│   │   └── static/              # Dashboard Assets
-│   ├── models.py                # Unified Pydantic data models
-│   ├── client.py                # CLI client for testing
-│   └── __init__.py              # Package initialization
+├── core/                        # Simulation Logic Layer
+│   ├── drone.py                 # Movement physics & battery drain
+│   ├── graders.py               # Unified scoring logic (0.01 - 0.99)
+│   ├── grid_generator.py        # Map generation logic
+│   ├── obstacles.py             # Collision & terrain detection
+│   ├── state_manager.py         # Episodic state management
+│   └── tasks.py                 # Mission difficulty configurations
+├── rl/                          # Intelligence Layer
+│   ├── model.py                 # Neural network architecture (DQN)
+│   ├── policy.py                # Action selection policies
+│   └── trainer.py               # Path analytics & learning engine
+├── server/                      # Interface Layer
+│   ├── app.py                   # FastAPI server & Grader discovery
+│   ├── grid_world_environment.py # Main simulation environment
+│   ├── map_generator.py         # Procedural map generation
+│   └── static/                  # Dashboard Assets
 ├── data/                        # Persistence Layer
 │   ├── memory.json              # Historical episode logs (JSON)
 │   └── train.log                # Neural training logs
 ├── tests/                       # Validation Layer
 │   ├── test_api.py              # Endpoint integration tests
 │   └── test_env.py              # Physics & Grading unit tests
-├── inference.py                 # Standardized Inference Entry Point
-├── validate-submission.sh       # Submission validation script
+├── models.py                    # Unified Pydantic data models
+├── client.py                    # CLI client for testing
+├── __init__.py                  # Package marker (Root as drone_env)
+├── train.py                     # Neural training entry point
+├── inference.py                 # LLM-guided inference entry point
 ├── openenv.yaml                 # Mission Manifest (Tasks & Graders)
 ├── pyproject.toml               # Python project & dependency config
 ├── Dockerfile                   # Deployment container manifest
-└── README.md                    # Documentation
+└── validate-submission.sh       # Submission validation script
 ```
 
 ### Component Interaction Flow
