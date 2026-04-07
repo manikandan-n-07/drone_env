@@ -17,24 +17,16 @@ import time
 import json
 
 # Add root to sys.path for local imports
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-# Unified Imports - Root-relative
-# We use try/except to handle different execution environments (uv run vs direct python)
-try:
-    from drone_env.models import DroneAction, DroneObservation, DroneState
-    from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
-    from drone_env.core.tasks import TASK_CONFIG
-    from drone_env.core.graders import GRADERS
-    from drone_env.rl.trainer import PathLearner, get_action_from_policy
-except ImportError:
-    from models import DroneAction, DroneObservation, DroneState
-    from server.grid_world_environment import DroneDeliveryEnvironment
-    from core.tasks import TASK_CONFIG
-    from core.graders import GRADERS
-    from rl.trainer import PathLearner, get_action_from_policy
+# Unified Imports - Canonical Package Paths
+from drone_env.models import DroneAction, DroneObservation, DroneState
+from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
+from drone_env.core.tasks import TASK_CONFIG
+from drone_env.core.graders import GRADERS
+from drone_env.rl.trainer import PathLearner, get_action_from_policy
 
 app = FastAPI(
     title="Drone Delivery OpenEnv",

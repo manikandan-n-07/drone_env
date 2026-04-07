@@ -59,8 +59,7 @@ run_with_timeout() {
 
 portable_mktemp() {
   local prefix="${1:-validate}"
-  # Use current directory for temp file on Windows/bash compatibility
-  mktemp "${prefix}-XXXXXX" 2>/dev/null || mktemp
+  mktemp "${TMPDIR:-/tmp}/${prefix}-XXXXXX" 2>/dev/null || mktemp
 }
 
 CLEANUP_FILES=()

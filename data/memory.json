@@ -4,138 +4,6 @@
     "steps": [
       {
         "step": 1,
-        "x": 9,
-        "y": 8,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 9,
-        "y": 8,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 9,
-        "y": 8,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 9,
-        "y": 8,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9333
-      },
-      {
-        "step": 5,
-        "x": 9,
-        "y": 8,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9167
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        7,
-        3
-      ]
-    ],
-    "deliveries_done": 0,
-    "total_reward": -1.25,
-    "total_steps": 5
-  },
-  {
-    "task": "drone_env.core.graders:grade_easy",
-    "steps": [
-      {
-        "step": 1,
-        "x": 8,
-        "y": 6,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 9,
-        "y": 6,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 9,
-        "y": 7,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 8,
-        "y": 7,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.9333
-      },
-      {
-        "step": 5,
-        "x": 8,
-        "y": 7,
-        "action": "WAIT",
-        "reward": -0.1,
-        "battery": 0.9167
-      },
-      {
-        "step": 6,
-        "x": 8,
-        "y": 6,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.9
-      },
-      {
-        "step": 7,
-        "x": 9,
-        "y": 6,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.8833
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        3,
-        8
-      ]
-    ],
-    "deliveries_done": 0,
-    "total_reward": -0.4,
-    "total_steps": 7
-  },
-  {
-    "task": "drone_env.core.graders:grade_easy",
-    "steps": [
-      {
-        "step": 1,
         "x": 5,
         "y": 5,
         "action": "WAIT",
@@ -17192,5 +17060,1121 @@
     "deliveries_done": 5,
     "total_reward": 13.5,
     "total_steps": 37
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 2,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 3,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 4,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 5,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.9167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 6,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.9,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 7,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 8,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 9,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.85,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 10,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 11,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 12,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 13,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 14,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 15,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.75,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 16,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 17,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 18,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 19,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 20,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 21,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.65,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 22,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 23,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 24,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 25,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 26,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 27,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.55,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 28,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 29,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 30,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 31,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 32,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 33,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.45,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 34,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 35,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 36,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 37,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 38,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 39,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.35,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 40,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 41,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 42,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 43,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 44,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 45,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.25,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 46,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 47,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 48,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 49,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 50,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 51,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.15,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 52,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 53,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 54,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 55,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 56,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 57,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.05,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 58,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 59,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 60,
+        "x": 9,
+        "y": 0,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        0,
+        7
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 6.1,
+    "total_steps": 60
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 8,
+        "y": 7,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 8,
+        "y": 8,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 3,
+        "x": 7,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 8,
+        "y": 8,
+        "action": "RIGHT",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 5,
+        "x": 7,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 6,
+        "x": 8,
+        "y": 8,
+        "action": "RIGHT",
+        "reward": 0.1,
+        "battery": 0.9,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 7,
+        "x": 7,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.8833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 8,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 9,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.85,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 10,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 11,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 12,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.8,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 13,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 14,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 15,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.75,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 16,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 17,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 18,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 19,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 20,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 21,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.65,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 22,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 23,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 24,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 25,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 26,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 27,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.55,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 28,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 29,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 30,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 31,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 32,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 33,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.45,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 34,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 35,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 36,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 37,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 38,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 39,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.35,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 40,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 41,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 42,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 43,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 44,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 45,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.25,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 46,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 47,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 48,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 49,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 50,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 51,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.15,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 52,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 53,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 54,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 55,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 56,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 57,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.05,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 58,
+        "x": 7,
+        "y": 8,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 59,
+        "x": 7,
+        "y": 7,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.0167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 60,
+        "x": 8,
+        "y": 7,
+        "action": "RIGHT",
+        "reward": 0.1,
+        "battery": 0.0,
+        "message": "On road \ud83d\udee3\ufe0f"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        8,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 6.1,
+    "total_steps": 60
   }
 ]

@@ -1,5 +1,5 @@
 # Use official lightweight Python image
-# REBUILD_TIMESTAMP: 2026-04-07 18:58 (Final Phase 2 Sync)
+# REBUILD_TIMESTAMP: 2026-04-07 20:10 (Package Structure Fix)
 FROM python:3.10-slim
 
 # Set working directory
@@ -27,4 +27,4 @@ ENV HF_HOME=/tmp/.cache
 
 # Command to run the FastAPI server
 # This calls the main function in server/app.py which starts uvicorn
-CMD ["python", "server/app.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "drone_env/server/app.py", "--host", "0.0.0.0", "--port", "8000"]

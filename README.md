@@ -81,41 +81,39 @@ The framework supports three operational modes:
 The codebase follows a clean separation-of-concerns architecture across four distinct layers:
 
 ```
-drone_env/
-├── core/                        # Simulation Logic Layer
-│   ├── drone.py                 # Movement physics & battery drain
-│   ├── graders.py               # Unified scoring logic (0.01 - 0.99)
-│   ├── grid_generator.py        # Map generation logic
-│   ├── obstacles.py             # Collision & terrain detection
-│   ├── state_manager.py         # Episodic state management
-│   └── tasks.py                 # Mission difficulty configurations
-├── rl/                          # Intelligence Layer
-│   ├── model.py                 # Neural network architecture (DQN)
-│   ├── policy.py                # Action selection policies
-│   └── trainer.py               # Path analytics & learning engine
-├── server/                      # Interface Layer
-│   ├── app.py                   # FastAPI server & Grader discovery
-│   ├── grid_world_environment.py # Main simulation environment
-│   ├── map_generator.py         # Procedural map generation
-│   └── static/                  # Dashboard Assets
-│       ├── index.html           # Interactive dashboard layout
-│       ├── script.js            # Frontend logic & Mission modal
-│       ├── style.css            # Cyan/Amber aesthetic styles
-│       └── favicon.png          # SkyRelic Branding (favicon)
+.
+├── drone_env/                   # Core Package Subdirectory
+│   ├── core/                    # Simulation Logic Layer
+│   │   ├── drone.py             # Movement physics & battery drain
+│   │   ├── graders.py           # Unified scoring logic (0.01 - 0.99)
+│   │   ├── grid_generator.py    # Map generation logic
+│   │   ├── obstacles.py         # Collision & terrain detection
+│   │   ├── state_manager.py     # Episodic state management
+│   │   └── tasks.py             # Mission difficulty configurations
+│   ├── rl/                      # Intelligence Layer
+│   │   ├── model.py             # Neural network architecture (DQN)
+│   │   ├── policy.py            # Action selection policies
+│   │   └── trainer.py           # Path analytics & learning engine
+│   ├── server/                  # Interface Layer
+│   │   ├── app.py               # FastAPI server & Grader discovery
+│   │   ├── grid_world_environment.py # Main simulation environment
+│   │   ├── map_generator.py     # Procedural map generation
+│   │   └── static/              # Dashboard Assets
+│   ├── models.py                # Unified Pydantic data models
+│   ├── client.py                # CLI client for testing
+│   └── __init__.py              # Package initialization
 ├── data/                        # Persistence Layer
 │   ├── memory.json              # Historical episode logs (JSON)
 │   └── train.log                # Neural training logs
 ├── tests/                       # Validation Layer
 │   ├── test_api.py              # Endpoint integration tests
 │   └── test_env.py              # Physics & Grading unit tests
+├── inference.py                 # Standardized Inference Entry Point
+├── validate-submission.sh       # Submission validation script
 ├── openenv.yaml                 # Mission Manifest (Tasks & Graders)
 ├── pyproject.toml               # Python project & dependency config
-├── models.py                    # Unified Pydantic data models
-├── train.py                     # Neural training entry point
-├── inference.py                 # LLM-guided inference entry point
-├── client.py                    # CLI client for testing
 ├── Dockerfile                   # Deployment container manifest
-└── validate-submission.sh       # Submission validation script
+└── README.md                    # Documentation
 ```
 
 ### Component Interaction Flow
@@ -350,7 +348,7 @@ python train.py --task hard_delivery --episodes 5000
 ### Python SDK Client
 
 ```python
-from client import DroneEnvClient
+from drone_env.client import DroneEnvClient
 
 with DroneEnvClient("http://localhost:8000") as client:
     # Check server health
@@ -506,8 +504,8 @@ And a concise per-step user prompt with position, battery, target, and distance.
 ### Build & Run Locally
 
 ```bash
-# Build from the server/ directory
-docker build -t drone-env -f server/Dockerfile .
+# Build from the root directory
+docker build -t drone-env .
 
 # Run with health check
 docker run -p 8000:8000 \
@@ -553,7 +551,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD curl -f http://localhost:8000/health || exit 1
 
 # Entrypoint
-CMD ["sh", "-c", "cd /app/env && uvicorn server.app:app --host 0.0.0.0 --port 8000"]
+CMD ["python", "drone_env/server/app.py", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
 ---
@@ -567,7 +565,7 @@ spec_version: 1
 name: drone-env
 type: space
 runtime: fastapi
-app: server.app:app
+app: drone_env.server.app:app
 port: 8000
 tasks:
   - id: easy_delivery
