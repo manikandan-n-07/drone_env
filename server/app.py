@@ -76,7 +76,59 @@ _env = DroneDeliveryEnvironment()
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "version": "0.2.1"}
+    # OpenEnv validator requires status == "healthy"
+    return {"status": "healthy", "version": "0.2.1"}
+
+
+@app.get("/metadata")
+async def metadata():
+    """OpenEnv spec: GET /metadata returns name and description."""
+    return {
+        "name": "drone_env",
+        "description": "SkyRelic Drone Delivery reinforcement-learning environment with easy/medium/hard delivery tasks on a grid world.",
+        "version": "0.2.1",
+        "tasks": [
+            {"id": "easy_delivery",  "grader": "drone_env.core.graders:grade_easy"},
+            {"id": "medium_delivery", "grader": "drone_env.core.graders:grade_medium"},
+            {"id": "hard_delivery",  "grader": "drone_env.core.graders:grade_hard"},
+        ],
+    }
+
+
+@app.get("/schema")
+async def schema():
+    """OpenEnv spec: GET /schema returns action, observation, and state schemas."""
+    return {
+        "action": DroneAction.model_json_schema(),
+        "observation": DroneObservation.model_json_schema(),
+        "state": DroneState.model_json_schema(),
+    }
+
+
+@app.post("/mcp")
+async def mcp(request: Request):
+    """OpenEnv spec: POST /mcp returns JSON-RPC 2.0 payload."""
+    body = {}
+    try:
+        body = await request.json()
+    except Exception:
+        pass
+    method = body.get("method", "tools/list")
+    req_id = body.get("id", 1)
+    if method == "tools/list":
+        result = {
+            "tools": [
+                {"name": "reset",  "description": "Reset the drone environment"},
+                {"name": "step",   "description": "Take one step in the environment"},
+                {"name": "state",  "description": "Get current environment state"},
+                {"name": "grade",  "description": "Get current task score"},
+            ]
+        }
+    elif method == "tools/call":
+        result = {"content": [{"type": "text", "text": "Use /reset, /step, /state, or /grade endpoints."}]}
+    else:
+        result = {"message": "OpenEnv drone_env MCP bridge"}
+    return {"jsonrpc": "2.0", "id": req_id, "result": result}
 
 @app.post("/reset", response_model=DroneObservation)
 async def reset(action: Optional[DroneAction] = None):

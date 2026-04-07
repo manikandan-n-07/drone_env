@@ -1,5 +1,5 @@
 # Use official lightweight Python image
-# REBUILD_TIMESTAMP: 2026-04-07 20:10 (Package Structure Fix)
+# REBUILD_TIMESTAMP: 2026-04-07 23:30 (Phase2 Fix: /health=healthy, /metadata, /schema, /mcp, httpx)
 FROM python:3.10-slim
 
 # Set working directory

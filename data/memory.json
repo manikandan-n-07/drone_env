@@ -1,403 +1,5 @@
 [
   {
-    "task": "drone_env.core.graders:grade_easy",
-    "steps": [
-      {
-        "step": 1,
-        "x": 4,
-        "y": 9,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 3,
-        "y": 9,
-        "action": "LEFT",
-        "reward": 0.95,
-        "battery": 0.9667
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        3,
-        9
-      ]
-    ],
-    "deliveries_done": 1,
-    "total_reward": 0.9,
-    "total_steps": 2
-  },
-  {
-    "task": "drone_env.core.graders:grade_easy",
-    "steps": [
-      {
-        "step": 1,
-        "x": 4,
-        "y": 5,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 4,
-        "y": 6,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 4,
-        "y": 7,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 5,
-        "y": 7,
-        "action": "RIGHT",
-        "reward": 0.95,
-        "battery": 0.9333
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        5,
-        7
-      ]
-    ],
-    "deliveries_done": 1,
-    "total_reward": 0.8,
-    "total_steps": 4
-  },
-  {
-    "task": "drone_env.core.graders:grade_medium",
-    "steps": [
-      {
-        "step": 1,
-        "x": 8,
-        "y": 12,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.99
-      },
-      {
-        "step": 2,
-        "x": 8,
-        "y": 11,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.98
-      },
-      {
-        "step": 3,
-        "x": 8,
-        "y": 10,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.97
-      },
-      {
-        "step": 4,
-        "x": 8,
-        "y": 9,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.96
-      },
-      {
-        "step": 5,
-        "x": 8,
-        "y": 8,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.95
-      },
-      {
-        "step": 6,
-        "x": 8,
-        "y": 7,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.94
-      },
-      {
-        "step": 7,
-        "x": 8,
-        "y": 6,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.93
-      },
-      {
-        "step": 8,
-        "x": 8,
-        "y": 5,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.92
-      },
-      {
-        "step": 9,
-        "x": 8,
-        "y": 4,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.91
-      },
-      {
-        "step": 10,
-        "x": 8,
-        "y": 3,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.9
-      },
-      {
-        "step": 11,
-        "x": 9,
-        "y": 3,
-        "action": "RIGHT",
-        "reward": -0.15,
-        "battery": 0.89
-      },
-      {
-        "step": 12,
-        "x": 9,
-        "y": 2,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.88
-      },
-      {
-        "step": 13,
-        "x": 10,
-        "y": 2,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.87
-      },
-      {
-        "step": 14,
-        "x": 10,
-        "y": 1,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.86
-      },
-      {
-        "step": 15,
-        "x": 11,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.85
-      },
-      {
-        "step": 16,
-        "x": 11,
-        "y": 0,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.84
-      },
-      {
-        "step": 17,
-        "x": 12,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": 0.75,
-        "battery": 0.83
-      },
-      {
-        "step": 18,
-        "x": 11,
-        "y": 0,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.82
-      },
-      {
-        "step": 19,
-        "x": 10,
-        "y": 0,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.81
-      },
-      {
-        "step": 20,
-        "x": 9,
-        "y": 0,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.8
-      },
-      {
-        "step": 21,
-        "x": 9,
-        "y": 1,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.79
-      },
-      {
-        "step": 22,
-        "x": 8,
-        "y": 1,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.78
-      },
-      {
-        "step": 23,
-        "x": 8,
-        "y": 2,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.77
-      },
-      {
-        "step": 24,
-        "x": 7,
-        "y": 2,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.76
-      },
-      {
-        "step": 25,
-        "x": 7,
-        "y": 3,
-        "action": "DOWN",
-        "reward": -0.1,
-        "battery": 0.75
-      },
-      {
-        "step": 26,
-        "x": 6,
-        "y": 3,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.74
-      },
-      {
-        "step": 27,
-        "x": 6,
-        "y": 4,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.73
-      },
-      {
-        "step": 28,
-        "x": 5,
-        "y": 4,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.72
-      },
-      {
-        "step": 29,
-        "x": 5,
-        "y": 5,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.71
-      },
-      {
-        "step": 30,
-        "x": 4,
-        "y": 5,
-        "action": "LEFT",
-        "reward": 0.75,
-        "battery": 0.7
-      },
-      {
-        "step": 31,
-        "x": 4,
-        "y": 6,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.69
-      },
-      {
-        "step": 32,
-        "x": 4,
-        "y": 7,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.68
-      },
-      {
-        "step": 33,
-        "x": 4,
-        "y": 8,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.67
-      },
-      {
-        "step": 34,
-        "x": 3,
-        "y": 8,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.66
-      },
-      {
-        "step": 35,
-        "x": 3,
-        "y": 9,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.65
-      },
-      {
-        "step": 36,
-        "x": 2,
-        "y": 9,
-        "action": "LEFT",
-        "reward": 0.75,
-        "battery": 0.64
-      }
-    ],
-    "grid_meta": {
-      "width": 14,
-      "height": 14
-    },
-    "delivery_positions": [
-      [
-        12,
-        0
-      ],
-      [
-        4,
-        5
-      ],
-      [
-        2,
-        9
-      ]
-    ],
-    "deliveries_done": 3,
-    "total_reward": 0.45,
-    "total_steps": 36
-  },
-  {
     "task": "drone_env.core.graders:grade_hard",
     "steps": [
       {
@@ -17938,6 +17540,159 @@
     "delivery_positions": [
       [
         2,
+        1
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.35,
+    "total_steps": 4
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 1,
+        "y": 7,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 0,
+        "y": 7,
+        "action": "LEFT",
+        "reward": 1.05,
+        "battery": 0.9667,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        0,
+        7
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.15,
+    "total_steps": 2
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 4,
+        "y": 5,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 4,
+        "y": 4,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 3,
+        "x": 4,
+        "y": 3,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 4,
+        "y": 2,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 5,
+        "x": 3,
+        "y": 2,
+        "action": "LEFT",
+        "reward": 1.05,
+        "battery": 0.9167,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        3,
+        2
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.45,
+    "total_steps": 5
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 3,
+        "y": 3,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 3,
+        "y": 2,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "Flying over a tree! \ud83c\udf33"
+      },
+      {
+        "step": 3,
+        "x": 3,
+        "y": 1,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 4,
+        "y": 1,
+        "action": "RIGHT",
+        "reward": 1.05,
+        "battery": 0.9333,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        4,
         1
       ]
     ],
