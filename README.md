@@ -208,8 +208,8 @@ class DroneObservation(BaseModel):
 | Deliveries | 1 | 3 | 5 |
 | Max Steps | 60 | 100 | 160 |
 | Battery | 60 | 100 | 160 |
-| `r_delivery` | +1.0 | +0.8 | +0.6 |
-| `r_battery_dead` | 0.10 | 0.15 | 0.25 |
+| `r_delivery` | +0.95 | +0.90 | +0.85 |
+| `r_battery_dead` | +0.10 | +0.15 | +0.25 |
 
 ---
 
