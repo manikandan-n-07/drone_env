@@ -11,8 +11,3 @@ tasks:
     grader: drone_env.core.graders:grade_medium
   - id: hard_delivery
     grader: drone_env.core.graders:grade_hard
-graders:
-  - id: drone_env.core.graders:grade_easy
-  - id: drone_env.core.graders:grade_medium
-  - id: drone_env.core.graders:grade_hard
-

@@ -90,17 +90,27 @@ async def step(action: DroneAction):
 async def get_state():
     return _env.state
 
+# Task ID → grader key mapping (matches openenv.yaml task ids)
+TASK_ID_TO_GRADER = {
+    "easy_delivery":  "drone_env.core.graders:grade_easy",
+    "medium_delivery": "drone_env.core.graders:grade_medium",
+    "hard_delivery":  "drone_env.core.graders:grade_hard",
+}
+
 @app.get("/grade/{task_name}")
 async def grade(task_name: str):
-    if task_name not in GRADERS:
+    # Accept both short task IDs ("easy_delivery") and full grader keys
+    grader_key = TASK_ID_TO_GRADER.get(task_name, task_name)
+    if grader_key not in GRADERS:
         raise HTTPException(404, detail=f"Unknown task: {task_name}")
-    return {"task": task_name, "score": float(GRADERS[task_name](_env.state))}
+    return {"task": task_name, "score": float(GRADERS[grader_key](_env.state))}
 
 @app.get("/analyse/{task_name}")
 async def analyse(task_name: str):
-    if task_name not in TASK_CONFIG:
+    grader_key = TASK_ID_TO_GRADER.get(task_name, task_name)
+    if grader_key not in TASK_CONFIG:
          raise HTTPException(404, detail=f"Unknown task: {task_name}")
-    return PathLearner.analyse_episodes(task_name)
+    return PathLearner.analyse_episodes(grader_key)
 
 @app.get("/path_history")
 async def path_history():
@@ -108,11 +118,24 @@ async def path_history():
 
 @app.get("/tasks")
 async def list_tasks():
-    return {"tasks": [{"name": k, **v} for k, v in TASK_CONFIG.items()]}
+    return {"tasks": [{
+        "id": tid,
+        "name": tid,
+        "grader": gkey,
+        **TASK_CONFIG[gkey]
+    } for tid, gkey in TASK_ID_TO_GRADER.items()]}
 
 @app.get("/graders")
 async def list_graders():
-    return {"graders": list(GRADERS.keys())}
+    # Return task IDs (the submission system expects these to match openenv.yaml task ids)
+    return {"graders": list(TASK_ID_TO_GRADER.keys())}
+
+@app.post("/grade/{task_name}")
+async def grade_post(task_name: str):
+    grader_key = TASK_ID_TO_GRADER.get(task_name, task_name)
+    if grader_key not in GRADERS:
+        raise HTTPException(404, detail=f"Unknown task: {task_name}")
+    return {"task": task_name, "score": float(GRADERS[grader_key](_env.state))}
 
 @app.get("/logs")
 async def get_logs():

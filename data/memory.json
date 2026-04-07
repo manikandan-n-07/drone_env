@@ -4,56 +4,6 @@
     "steps": [
       {
         "step": 1,
-        "x": 1,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 2,
-        "y": 1,
-        "action": "RIGHT",
-        "reward": -0.1,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 2,
-        "y": 0,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 3,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": 0.95,
-        "battery": 0.9333
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        3,
-        0
-      ]
-    ],
-    "deliveries_done": 1,
-    "total_reward": 0.75,
-    "total_steps": 4
-  },
-  {
-    "task": "drone_env.core.graders:grade_easy",
-    "steps": [
-      {
-        "step": 1,
         "x": 4,
         "y": 9,
         "action": "DOWN",
@@ -17940,5 +17890,59 @@
     "deliveries_done": 3,
     "total_reward": 5.9,
     "total_steps": 20
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 4,
+        "y": 2,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 3,
+        "y": 2,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 3,
+        "x": 3,
+        "y": 1,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 2,
+        "y": 1,
+        "action": "LEFT",
+        "reward": 1.05,
+        "battery": 0.9333,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        2,
+        1
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.35,
+    "total_steps": 4
   }
 ]

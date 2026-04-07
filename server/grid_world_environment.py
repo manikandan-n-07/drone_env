@@ -49,14 +49,24 @@ class DroneDeliveryEnvironment(Environment):
         if self._step_records and self._state.episode_id and not self._state.done:
              self._persist_episode()
 
+        # Map short task IDs (from openenv.yaml) to full grader keys
+        _TASK_ID_MAP = {
+            "easy_delivery":   "drone_env.core.graders:grade_easy",
+            "medium_delivery": "drone_env.core.graders:grade_medium",
+            "hard_delivery":   "drone_env.core.graders:grade_hard",
+        }
         task = "drone_env.core.graders:grade_easy"
-        if action and action.task_name and action.task_name in TASK_CONFIG:
-            task = action.task_name
-        elif action and action.task_name:
-            # handle cases like "easy" instead of "easy_delivery"
-            for k in TASK_CONFIG:
-                if k.startswith(action.task_name):
-                    task = k; break
+        if action and action.task_name:
+            name = action.task_name
+            if name in _TASK_ID_MAP:
+                task = _TASK_ID_MAP[name]
+            elif name in TASK_CONFIG:
+                task = name
+            else:
+                # handle partial matches like "easy"
+                for k in TASK_CONFIG:
+                    if k.startswith(name):
+                        task = k; break
 
         self._cfg = TASK_CONFIG[task]
         self._rng.manual_seed(random.randint(0, 2**31))
