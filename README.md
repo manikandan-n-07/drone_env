@@ -681,7 +681,7 @@ The following table summarizes the mission parameters and reward weights defined
 | **$r_{\text{wait}}$** | +0.01 | +0.01 | +0.01 |
 | **$r_{\text{collision}}$** | +0.02 | +0.02 | +0.01 |
 | **$r_{\text{obstacle}}$** | +0.02 | +0.02 | +0.01 |
-| **$r_{\text{battery\_dead}}$** | +0.01 | +0.01 | +0.01 |
+| **$r_{\text{battery-dead}}$** | +0.01 | +0.01 | +0.01 |
 | **$r_{\text{wall/blocked}}$** | +0.01 | +0.01 | +0.01 |
 
 ---
