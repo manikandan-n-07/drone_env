@@ -4,6 +4,15 @@
 // ═══════════════════════════════════════════════════════
 const BASE = ''; 
 const DIRECTIONS = ['UP','DOWN','LEFT','RIGHT','WAIT'];
+const EMOJI = {
+    drone: "🚁",
+    road: "🛣️",
+    building: "🏢",
+    tree: "🌳",
+    obstacle: "🚧",
+    delivery: "📦",
+    done_del: "✅"
+};
 
 // ═══════════════════════════════════════════════════════
 //  STATE
@@ -17,6 +26,7 @@ let stepHistory   = []; // For CSV export
 let lastLogs      = "";
 let lastTerminalLogs = "";
 let autoActive = false;
+let startTime = null;
 
 // ═══════════════════════════════════════════════════════
 //  REWARD CHART
@@ -78,7 +88,7 @@ function updateUI(data) {
     
     // Performance Score
     const scoreEl = document.getElementById('statScore');
-    if (scoreEl) scoreEl.textContent = Math.round(obs.score);
+    if (scoreEl) scoreEl.textContent = obs.score.toFixed(3);
     
     
     // Delivery Progress Bar
@@ -123,7 +133,7 @@ function updateUI(data) {
         y: obs.drone_y,
         reward: obs.reward_last.toFixed(4),
         total_reward: obs.reward_total.toFixed(4),
-        score: Math.round(obs.score),
+        score: obs.score.toFixed(4),
         battery: batPct,
         message: obs.message
     });
@@ -139,6 +149,7 @@ function updateUI(data) {
     // Auto-stop on battery zero or done
     if (obs.done || obs.battery <= 0) {
         stopAuto();
+        showCompletionPopup(obs);
     }
     
     // Live JSON Telemetry Stream
@@ -154,6 +165,7 @@ function updateLiveTelemetry(obs) {
         step: obs.step_count,
         pos: `(${obs.drone_x}, ${obs.drone_y})`,
         reward: parseFloat(obs.reward_last.toFixed(4)),
+        total_reward: parseFloat(obs.reward_total.toFixed(4)),
         battery: `${Math.round(obs.battery * 100)}%`,
         status: obs.message
     };
@@ -241,6 +253,7 @@ async function doReset() {
         const data = await r.json();
         rewardHistory = [];
         stepHistory = [];
+        startTime = Date.now();
         const logList = document.getElementById('logList');
         if(logList) logList.innerHTML = '';
         updateUI(data);
@@ -510,3 +523,167 @@ function startTerminalLogPolling() {
         } catch(e) {}
     }, 1000); // Poll slightly faster for real-time feel
 }
+// ═══════════════════════════════════════════════════════
+//  COMPLETION MODAL
+// ═══════════════════════════════════════════════════════
+function showCompletionPopup(obs) {
+    const modal = document.getElementById('completionModal');
+    if (!modal) return;
+
+    const isSuccess = obs.deliveries_done === obs.deliveries_total;
+    document.getElementById('summaryStatus').textContent = isSuccess ? "MISSION LOG: SUCCESS" : "MISSION LOG: FAILED";
+    document.getElementById('summaryStatus').style.color = isSuccess ? "var(--green)" : "var(--red)";
+
+    document.getElementById('summaryScore').textContent = obs.score.toFixed(3);
+    document.getElementById('summaryDel').textContent = `${obs.deliveries_done}/${obs.deliveries_total}`;
+    document.getElementById('summarySteps').textContent = obs.step_count;
+    document.getElementById('summaryReward').textContent = obs.reward_total.toFixed(3);
+    
+    const avg = obs.step_count > 0 ? (obs.reward_total / obs.step_count).toFixed(4) : "0.000";
+    document.getElementById('summaryAvg').textContent = avg;
+
+    const delRatio = obs.deliveries_total > 0 ? (obs.deliveries_done / obs.deliveries_total) : 0;
+    const stepRatio = obs.max_steps > 0 ? (1 - obs.step_count / obs.max_steps) : 0;
+    const batRatio = obs.battery; // Already 0.0-1.0
+    
+    // Dynamic Efficiency: 75% Completion, 15% Battery, 10% Speed
+    const efficiency = (delRatio * 75) + (batRatio * 15) + (stepRatio * 10);
+    document.getElementById('summaryEfficiency').textContent = efficiency.toFixed(1) + "%";
+
+    const elapsed = startTime ? ((Date.now() - startTime) / 1000).toFixed(1) : "0.0";
+    document.getElementById('summaryTime').textContent = elapsed + "s";
+
+    const list = document.getElementById('summaryDeliveryList');
+    list.innerHTML = "";
+    
+    // Filter history for significant reward events
+    const significantSteps = stepHistory.filter(s => parseFloat(s.reward) > 0.05);
+    if (significantSteps.length > 0) {
+        significantSteps.forEach((d, i) => {
+            const item = document.createElement('div');
+            item.className = 'd-item';
+            item.innerHTML = `<span>Event #${i+1}: ${d.message.split('!')[0]}</span> <span style="color:var(--green)">+${d.reward}</span>`;
+            list.appendChild(item);
+        });
+    } else {
+        list.innerHTML = `<div class="d-item" style="color:var(--dim)">No significant reward events recorded.</div>`;
+    }
+
+    modal.style.display = 'flex';
+    
+    // AUTO-ANALYSE: Trigger deep analysis on completion
+    autoAnalyse();
+}
+
+async function autoAnalyse() {
+    try {
+        const res = await fetch(`/analyse/${currentTask}`);
+        const data = await res.json();
+        if (data && data.avg_reward) {
+            // Update modal with analysis results if elements exist
+            const avgEl = document.getElementById('summaryAvg');
+            if (avgEl) {
+                avgEl.innerHTML = `${data.avg_reward.toFixed(3)}`;
+            }
+            console.log("Auto-Analysis Complete:", data);
+        }
+    } catch(e) {
+        console.warn("Auto-analysis failed (maybe no memory yet?):", e);
+    }
+}
+
+function closeCompletionModal() {
+    const modal = document.getElementById('completionModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function startNextTask() {
+    closeCompletionModal();
+    
+    const sequence = {
+        'easy_delivery': 'medium_delivery',
+        'medium_delivery': 'hard_delivery',
+        'hard_delivery': 'easy_delivery'
+    };
+    
+    const nextTask = sequence[currentTask] || 'easy_delivery';
+    currentTask = nextTask;
+    
+    // Update active state on buttons
+    document.querySelectorAll('.task-btn').forEach(b => {
+        b.classList.remove('active');
+        if (b.dataset.task === nextTask) b.classList.add('active');
+    });
+    
+    doReset();
+    updateMissionLegend(); // Refresh legend
+}
+
+async function updateMissionLegend() {
+    try {
+        const res = await fetch('/tasks');
+        const data = await res.json();
+        const container = document.getElementById('legendTableContainer');
+        if (!container || !data.tasks) return;
+        
+        // Ensure tasks are sorted Easy, Medium, Hard
+        const order = ['easy_delivery', 'medium_delivery', 'hard_delivery'];
+        const tasks = data.tasks.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+        
+        container.innerHTML = `
+            <table class="l-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">TECHNICAL METRIC</th>
+                        <th style="width: 25%">EASY REWARD</th>
+                        <th style="width: 25%">MEDIUM REWARD</th>
+                        <th style="width: 25%">HARD REWARD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="l-dim">Grid Resolution</td>
+                        ${tasks.map(t => `<td class="l-hl">${t.width} x ${t.height}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Delivery Target</td>
+                        ${tasks.map(t => `<td class="l-hl">+${t.r_delivery}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Package Count</td>
+                        ${tasks.map(t => `<td class="l-hl">${t.n_deliveries}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Battery Capacity</td>
+                        ${tasks.map(t => `<td class="l-hl">${t.battery_max}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Safe Flight Step</td>
+                        ${tasks.map(t => `<td>+${t.r_step}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Collision Warning</td>
+                        ${tasks.map(t => `<td>+${t.r_obstacle}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Critical Battery Fail</td>
+                        ${tasks.map(t => `<td>+${t.r_battery_dead}</td>`).join('')}
+                    </tr>
+                     <tr>
+                        <td class="l-dim">Restricted Airspace (Wall)</td>
+                        ${tasks.map(t => `<td>+${t.r_wall}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="l-dim">Environment Density</td>
+                        ${tasks.map(t => `<td class="l-dim">${t.n_buildings}B, ${t.n_trees}T, ${t.n_obstacles}O</td>`).join('')}
+                    </tr>
+                </tbody>
+            </table>
+        `;
+    } catch(e) {
+        console.warn("Could not update legend:", e);
+    }
+}
+
+// Initial legend load
+window.addEventListener('load', updateMissionLegend);

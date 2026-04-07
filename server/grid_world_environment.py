@@ -155,6 +155,7 @@ class DroneDeliveryEnvironment(Environment):
             action=direction,
             reward=float(round(reward, 5)),
             battery=float(round(bat_norm, 4)),
+            message=msg,
         ))
         self._state.path_history = self._step_records
 
@@ -178,6 +179,11 @@ class DroneDeliveryEnvironment(Environment):
     @property
     def state(self) -> DroneState:
         return self._state
+
+    @property
+    def graders(self) -> Dict:
+        """Expose graders for the environment."""
+        return GRADERS
 
     def _persist_episode(self):
         try:
@@ -210,9 +216,9 @@ class DroneDeliveryEnvironment(Environment):
             distance_to_target=float(dist) if dist is not None else None,
             step_count=int(self._state.step_count),
             max_steps=int(cfg["max_steps"]),
-            reward_last=float(round(reward, 4)),
-            reward_total=float(round(self._state.reward_total, 4)),
-            score=float(round(GRADERS[self._state.task_name](self._state) * 100, 2)),
+            reward_last=float(max(0.01, min(0.99, round(reward, 4)))),
+            reward_total=float(max(0.01, min(0.99, round(self._state.reward_total, 4)))),
+            score=float(max(0.01, min(0.99, round(GRADERS[self._state.task_name](self._state), 4)))),
             done=bool(self._state.done),
             message=str(message),
             legend=dict(LEGEND),

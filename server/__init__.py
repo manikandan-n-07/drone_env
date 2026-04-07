@@ -6,6 +6,6 @@
 
 """Drone Env environment server components."""
 
-from .drone_env_environment import DroneEnvironment
+from .grid_world_environment import DroneDeliveryEnvironment
 
-__all__ = ["DroneEnvironment"]
+__all__ = ["DroneDeliveryEnvironment"]

@@ -107,23 +107,23 @@ def _make_state(**kw):
 def test_grade_zero_deliveries():
     s = _make_state(deliveries_done=0, deliveries_total=2, step_count=10, battery=0.8)
     score = grade_easy(s)
-    assert 0.0 <= score <= 1.0
+    assert 0.01 <= score <= 0.99
     assert score < 0.5  # no deliveries → low score
 
 def test_grade_all_deliveries():
     s = _make_state(deliveries_done=2, deliveries_total=2, step_count=50, battery=0.9)
     score = grade_easy(s)
-    assert score >= 0.7  # all deliveries → high score
+    assert 0.7 <= score <= 0.99  # all deliveries → high score
 
 def test_grade_clamped():
     s = _make_state(deliveries_done=2, deliveries_total=2, step_count=1, battery=1.0)
     score = grade_easy(s)
-    assert 0.0 <= score <= 1.0
+    assert 0.01 <= score <= 0.99
 
 def test_grade_medium_hard_bounds():
     s = _make_state(deliveries_done=4, deliveries_total=4, step_count=100, battery=0.7)
-    assert 0.0 <= grade_medium(s) <= 1.0
-    assert 0.0 <= grade_hard(s) <= 1.0
+    assert 0.01 <= grade_medium(s) <= 0.99
+    assert 0.01 <= grade_hard(s) <= 0.99
 
 
 # ── Task configs ──────────────────────────────────────────────────────────────

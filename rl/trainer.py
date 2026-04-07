@@ -79,9 +79,11 @@ class PathLearner:
             return {"status": "No data", "message": f"No episodes for {task_name}"}
             
         total_ep = len(task_episodes)
-        avg_reward = sum(e["total_reward"] for e in task_episodes) / total_ep
-        avg_steps = sum(e["total_steps"] for e in task_episodes) / total_ep
-        avg_del = sum(e["deliveries_done"] for e in task_episodes) / total_ep
+        
+        # Ensure total_reward and others are strictly in (0.01, 0.99) even for old data
+        avg_reward = sum(max(0.01, min(0.99, e.get("total_reward", 0.0))) for e in task_episodes) / total_ep
+        avg_steps = sum(e.get("total_steps", 0) for e in task_episodes) / total_ep
+        avg_del = sum(e.get("deliveries_done", 0) for e in task_episodes) / total_ep
         
         # Action distribution
         action_counts = {"UP": 0, "DOWN": 0, "LEFT": 0, "RIGHT": 0, "WAIT": 0}
@@ -94,16 +96,16 @@ class PathLearner:
         return {
             "status": "Success",
             "total_episodes": total_ep,
-            "avg_reward": round(avg_reward, 3),
+            "avg_reward": float(max(0.01, min(0.99, round(avg_reward, 3)))),
             "avg_steps": round(avg_steps, 1),
             "avg_deliveries": f"{avg_del:.1f}",
             "action_distribution": action_counts
         }
 
 
-# ── PyTorch Integration ──────────────────────────────────────────────────────
+# --- PyTorch Integration ------------------------------------------------------
 
-from rl.model import PathQNet, CELL2IDX, ACTIONS
+from .model import PathQNet, CELL2IDX, ACTIONS
 
 def get_action_from_policy(obs: Any, task_name: str = "easy_delivery") -> str:
     """

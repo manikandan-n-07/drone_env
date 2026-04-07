@@ -14,7 +14,10 @@ except ImportError:
 try:
     from drone_env.server.map_generator import generate_grid
 except ImportError:
-    from map_generator import generate_grid
+    try:
+        from server.map_generator import generate_grid
+    except ImportError:
+        from .map_generator import generate_grid
 
 class DroneEnvironment(Environment):
     """

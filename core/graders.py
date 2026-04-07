@@ -26,7 +26,8 @@ def compute_grade(state: DroneState, max_steps: float) -> float:
     if state.deliveries_done < state.deliveries_total:
         score = min(score, 0.49)
         
-    return max(0.0, min(1.0, score))
+    # Hackathon Requirement: Score must be strictly between 0.0 and 1.0
+    return max(0.01, min(0.99, float(score)))
 
 
 def grade_easy(state: DroneState) -> float:
