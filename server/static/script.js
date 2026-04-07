@@ -17,7 +17,7 @@ const EMOJI = {
 // ═══════════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════════
-let currentTask = 'easy_delivery';
+let currentTask = 'drone_env.core.graders:grade_easy'; 
 let autoTimer   = null;
 let logTimer    = null;
 let obs         = null;
@@ -577,7 +577,7 @@ function showCompletionPopup(obs) {
 
 async function autoAnalyse() {
     try {
-        const res = await fetch(`/analyse/${currentTask}`);
+        const res = await fetch(`/analyse/${encodeURIComponent(currentTask)}`);
         const data = await res.json();
         if (data && data.avg_reward) {
             // Update modal with analysis results if elements exist
@@ -601,12 +601,12 @@ function startNextTask() {
     closeCompletionModal();
     
     const sequence = {
-        'easy_delivery': 'medium_delivery',
-        'medium_delivery': 'hard_delivery',
-        'hard_delivery': 'easy_delivery'
+        'drone_env.core.graders:grade_easy': 'drone_env.core.graders:grade_medium',
+        'drone_env.core.graders:grade_medium': 'drone_env.core.graders:grade_hard',
+        'drone_env.core.graders:grade_hard': 'drone_env.core.graders:grade_easy'
     };
     
-    const nextTask = sequence[currentTask] || 'easy_delivery';
+    const nextTask = sequence[currentTask] || 'drone_env.core.graders:grade_easy';
     currentTask = nextTask;
     
     // Update active state on buttons
@@ -627,7 +627,7 @@ async function updateMissionLegend() {
         if (!container || !data.tasks) return;
         
         // Ensure tasks are sorted Easy, Medium, Hard
-        const order = ['easy_delivery', 'medium_delivery', 'hard_delivery'];
+        const order = ['drone_env.core.graders:grade_easy', 'drone_env.core.graders:grade_medium', 'drone_env.core.graders:grade_hard'];
         const tasks = data.tasks.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
         
         container.innerHTML = `

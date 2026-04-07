@@ -33,7 +33,7 @@ class DroneDeliveryEnvironment(Environment):
     def __init__(self):
         super().__init__()
         self._state = DroneState()
-        self._cfg = TASK_CONFIG["easy_delivery"]
+        self._cfg = TASK_CONFIG["drone_env.core.graders:grade_easy"]
         self._grid: List[List[str]] = []
         self._deliveries: List[Tuple[int, int]] = []
         self._delivered: List[bool] = []
@@ -49,7 +49,7 @@ class DroneDeliveryEnvironment(Environment):
         if self._step_records and self._state.episode_id and not self._state.done:
              self._persist_episode()
 
-        task = "easy_delivery"
+        task = "drone_env.core.graders:grade_easy"
         if action and action.task_name and action.task_name in TASK_CONFIG:
             task = action.task_name
         elif action and action.task_name:

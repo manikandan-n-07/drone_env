@@ -14,7 +14,7 @@ class DroneAction(BaseModel):
     )
     task_name: Optional[str] = Field(
         default=None,
-        description="Task to load on reset: easy_delivery | medium_delivery | hard_delivery",
+        description="Task to load on reset: drone_env.core.graders:grade_easy | medium | hard",
     )
 
 
@@ -43,7 +43,7 @@ class DroneObservation(BaseModel):
 
 class DroneState(BaseModel):
     episode_id: str = ""
-    task_name: str = "easy_delivery"
+    task_name: str = "drone_env.core.graders:grade_easy"
     step_count: int = 0
     done: bool = False
     reward_total: float = 0.0

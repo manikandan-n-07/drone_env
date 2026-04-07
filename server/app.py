@@ -140,7 +140,7 @@ async def get_terminal_logs():
 @app.get("/rewards")
 async def get_rewards():
     """Return the reward configuration for the current task."""
-    task_name = _env.state.task_name or "easy_delivery"
+    task_name = _env.state.task_name or "drone_env.core.graders:grade_easy"
     config = TASK_CONFIG.get(task_name, {})
     # Filter only reward keys
     rewards = {k: v for k, v in config.items() if k.startswith("r_")}
@@ -181,7 +181,7 @@ async def get_memory_logs():
 
 @app.post("/predict")
 async def predict(obs: DroneObservation):
-    task_name = _env.state.task_name or "easy_delivery"
+    task_name = _env.state.task_name or "drone_env.core.graders:grade_easy"
     action_str = get_action_from_policy(obs, task_name)
     return {"direction": action_str}
 

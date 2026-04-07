@@ -41,7 +41,7 @@ OPENAI_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("API_KEY")
 API_KEY = HF_TOKEN if HF_TOKEN else OPENAI_KEY
 
 # Optional variables
-DRONE_TASK = os.getenv("DRONE_TASK", "easy_delivery")
+DRONE_TASK = os.getenv("DRONE_TASK", "drone_env.core.graders:grade_easy")
 BENCHMARK = os.getenv("DRONE_BENCHMARK", "drone_env_v1")
 LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME") # Optional for Docker testing
 

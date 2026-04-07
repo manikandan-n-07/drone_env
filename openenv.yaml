@@ -6,13 +6,13 @@ app: server.app:app
 port: 8000
 tasks:
   - id: easy_delivery
-    grader: easy_delivery
+    grader: drone_env.core.graders:grade_easy
   - id: medium_delivery
-    grader: medium_delivery
+    grader: drone_env.core.graders:grade_medium
   - id: hard_delivery
-    grader: hard_delivery
+    grader: drone_env.core.graders:grade_hard
 graders:
-  - id: easy_delivery
-  - id: medium_delivery
-  - id: hard_delivery
+  - id: drone_env.core.graders:grade_easy
+  - id: drone_env.core.graders:grade_medium
+  - id: drone_env.core.graders:grade_hard
 

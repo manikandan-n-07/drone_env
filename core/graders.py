@@ -43,7 +43,7 @@ def grade_hard(state: DroneState) -> float:
 
 
 GRADERS = {
-    "easy_delivery": grade_easy,
-    "medium_delivery": grade_medium,
-    "hard_delivery": grade_hard
+    "drone_env.core.graders:grade_easy": grade_easy,
+    "drone_env.core.graders:grade_medium": grade_medium,
+    "drone_env.core.graders:grade_hard": grade_hard
 }

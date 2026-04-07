@@ -565,15 +565,15 @@ app: server.app:app
 port: 8000
 tasks:
   - id: easy_delivery
-    grader: easy_delivery
+    grader: drone_env.core.graders:grade_easy
   - id: medium_delivery
-    grader: medium_delivery
+    grader: drone_env.core.graders:grade_medium
   - id: hard_delivery
-    grader: hard_delivery
+    grader: drone_env.core.graders:grade_hard
 graders:
-  - id: easy_delivery
-  - id: medium_delivery
-  - id: hard_delivery
+  - id: drone_env.core.graders:grade_easy
+  - id: drone_env.core.graders:grade_medium
+  - id: drone_env.core.graders:grade_hard
 ```
 
 ### Validate Before Submission
@@ -885,6 +885,7 @@ The **SkyRelic** environment has been updated to fully comply with the **Meta Py
 
 ### 🛡️ Validation Fixes
 - **Strict Score Clamping**: All mission scores and rewards are now strictly clamped to the **(0.01, 0.99)** range in `core/graders.py` and `server/grid_world_environment.py`. This prevents the "out of range" (exactly 0.0 or 1.0) failures reported by the automated validator.
+- **Full Identity Sync (Grader Discovery)**: Task and grader identifiers have been synchronized across the manifest (`openenv.yaml`), backend API, and simulation core using full Python module paths (e.g., `drone_env.core.graders:grade_easy`). This ensures the Meta validator can successfully discover and import the grading functions.
 - **Differentiated Reward Scalars**: To provide clearer learning signals, reward scalars for step, wait, and collision penalties have been updated to difficulty-specific tiers:
     - **Easy Mission**: 0.10 (10%)
     - **Medium Mission**: 0.15 (15%)
