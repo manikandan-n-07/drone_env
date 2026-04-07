@@ -1,138 +1,6 @@
 [
   {
-    "task": "easy_delivery",
-    "steps": [
-      {
-        "step": 1,
-        "x": 9,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 9,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 9,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 9,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9333
-      },
-      {
-        "step": 5,
-        "x": 9,
-        "y": 0,
-        "action": "RIGHT",
-        "reward": -0.25,
-        "battery": 0.9167
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        2,
-        3
-      ]
-    ],
-    "deliveries_done": 0,
-    "total_reward": -1.25,
-    "total_steps": 5
-  },
-  {
-    "task": "easy_delivery",
-    "steps": [
-      {
-        "step": 1,
-        "x": 0,
-        "y": 5,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.9833
-      },
-      {
-        "step": 2,
-        "x": 1,
-        "y": 5,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.9667
-      },
-      {
-        "step": 3,
-        "x": 1,
-        "y": 6,
-        "action": "DOWN",
-        "reward": -0.05,
-        "battery": 0.95
-      },
-      {
-        "step": 4,
-        "x": 0,
-        "y": 6,
-        "action": "LEFT",
-        "reward": -0.05,
-        "battery": 0.9333
-      },
-      {
-        "step": 5,
-        "x": 0,
-        "y": 6,
-        "action": "WAIT",
-        "reward": -0.1,
-        "battery": 0.9167
-      },
-      {
-        "step": 6,
-        "x": 0,
-        "y": 5,
-        "action": "UP",
-        "reward": -0.05,
-        "battery": 0.9
-      },
-      {
-        "step": 7,
-        "x": 1,
-        "y": 5,
-        "action": "RIGHT",
-        "reward": -0.05,
-        "battery": 0.8833
-      }
-    ],
-    "grid_meta": {
-      "width": 10,
-      "height": 10
-    },
-    "delivery_positions": [
-      [
-        7,
-        0
-      ]
-    ],
-    "deliveries_done": 0,
-    "total_reward": -0.4,
-    "total_steps": 7
-  },
-  {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -166,7 +34,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -664,7 +532,7 @@
     "total_steps": 60
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -722,7 +590,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -780,7 +648,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -854,7 +722,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -888,7 +756,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -1386,7 +1254,7 @@
     "total_steps": 60
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -1436,7 +1304,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -1470,7 +1338,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -1520,7 +1388,7 @@
     "total_steps": 4
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -1834,7 +1702,7 @@
     "total_steps": 36
   },
   {
-    "task": "hard_delivery",
+    "task": "drone_env.core.graders:grade_hard",
     "steps": [
       {
         "step": 1,
@@ -2404,7 +2272,7 @@
     "total_steps": 67
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -2470,7 +2338,7 @@
     "total_steps": 6
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -2888,7 +2756,7 @@
     "total_steps": 50
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -2986,7 +2854,7 @@
     "total_steps": 10
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3076,7 +2944,7 @@
     "total_steps": 9
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3206,7 +3074,7 @@
     "total_steps": 14
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3264,7 +3132,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3322,7 +3190,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3396,7 +3264,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3430,7 +3298,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3928,7 +3796,7 @@
     "total_steps": 60
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -3986,7 +3854,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4044,7 +3912,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4118,7 +3986,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4152,7 +4020,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4650,7 +4518,7 @@
     "total_steps": 60
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4708,7 +4576,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4766,7 +4634,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4840,7 +4708,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -4874,7 +4742,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5140,7 +5008,7 @@
     "total_steps": 31
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5198,7 +5066,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5256,7 +5124,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5330,7 +5198,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5364,7 +5232,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5686,7 +5554,7 @@
     "total_steps": 38
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5736,7 +5604,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5802,7 +5670,7 @@
     "total_steps": 6
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -5852,7 +5720,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -6014,7 +5882,7 @@
     "total_steps": 18
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -6232,7 +6100,7 @@
     "total_steps": 24
   },
   {
-    "task": "hard_delivery",
+    "task": "drone_env.core.graders:grade_hard",
     "steps": [
       {
         "step": 1,
@@ -6794,7 +6662,7 @@
     "total_steps": 66
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -6852,7 +6720,7 @@
     "total_steps": 5
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -7070,7 +6938,7 @@
     "total_steps": 24
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7128,7 +6996,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7202,7 +7070,7 @@
     "total_steps": 7
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7316,7 +7184,7 @@
     "total_steps": 12
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7382,7 +7250,7 @@
     "total_steps": 6
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7456,7 +7324,7 @@
     "total_steps": 7
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -7770,7 +7638,7 @@
     "total_steps": 36
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7820,7 +7688,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7886,7 +7754,7 @@
     "total_steps": 6
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -7907,7 +7775,7 @@
     "total_steps": 1
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -8013,7 +7881,7 @@
     "total_steps": 11
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -8071,7 +7939,7 @@
     "total_steps": 5
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -8193,7 +8061,7 @@
     "total_steps": 13
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -8379,7 +8247,7 @@
     "total_steps": 20
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -8469,7 +8337,7 @@
     "total_steps": 9
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -8607,7 +8475,7 @@
     "total_steps": 14
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -8665,7 +8533,7 @@
     "total_steps": 5
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -8963,7 +8831,7 @@
     "total_steps": 34
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -9461,7 +9329,7 @@
     "total_steps": 60
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -9559,7 +9427,7 @@
     "total_steps": 10
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -9601,7 +9469,7 @@
     "total_steps": 3
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -9651,7 +9519,7 @@
     "total_steps": 4
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -9866,7 +9734,7 @@
     "total_steps": 21
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -10001,7 +9869,7 @@
     "total_steps": 13
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -10378,7 +10246,7 @@
     "total_steps": 39
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -10450,7 +10318,7 @@
     "total_steps": 6
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -10674,7 +10542,7 @@
     "total_steps": 22
   },
   {
-    "task": "hard_delivery",
+    "task": "drone_env.core.graders:grade_hard",
     "steps": [
       {
         "step": 1,
@@ -11104,7 +10972,7 @@
     "total_steps": 44
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11158,7 +11026,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11284,7 +11152,7 @@
     "total_steps": 12
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11401,7 +11269,7 @@
     "total_steps": 11
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11518,7 +11386,7 @@
     "total_steps": 11
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11554,7 +11422,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11581,7 +11449,7 @@
     "total_steps": 1
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -11743,7 +11611,7 @@
     "total_steps": 16
   },
   {
-    "task": "medium_delivery",
+    "task": "drone_env.core.graders:grade_medium",
     "steps": [
       {
         "step": 1,
@@ -12039,7 +11907,7 @@
     "total_steps": 30
   },
   {
-    "task": "hard_delivery",
+    "task": "drone_env.core.graders:grade_hard",
     "steps": [
       {
         "step": 1,
@@ -12649,7 +12517,7 @@
     "total_steps": 64
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -12685,7 +12553,7 @@
     "total_steps": 2
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -12739,7 +12607,7 @@
     "total_steps": 4
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -12829,7 +12697,7 @@
     "total_steps": 8
   },
   {
-    "task": "easy_delivery",
+    "task": "drone_env.core.graders:grade_easy",
     "steps": [
       {
         "step": 1,
@@ -16504,5 +16372,635 @@
     "deliveries_done": 0,
     "total_reward": 6.1,
     "total_steps": 60
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 8,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 7,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "Flying over a tree! \ud83c\udf33"
+      },
+      {
+        "step": 3,
+        "x": 6,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 5,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 5,
+        "x": 4,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 6,
+        "x": 3,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.9,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 7,
+        "x": 2,
+        "y": 8,
+        "action": "LEFT",
+        "reward": 0.1,
+        "battery": 0.8833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 8,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.8667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 9,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.2,
+        "battery": 0.85,
+        "message": "Hit DOWN boundary! \ud83d\udeab"
+      },
+      {
+        "step": 10,
+        "x": 2,
+        "y": 8,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.8333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 11,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.8167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 12,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.2,
+        "battery": 0.8,
+        "message": "Hit DOWN boundary! \ud83d\udeab"
+      },
+      {
+        "step": 13,
+        "x": 2,
+        "y": 8,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.7833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 14,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.7667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 15,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.2,
+        "battery": 0.75,
+        "message": "Hit DOWN boundary! \ud83d\udeab"
+      },
+      {
+        "step": 16,
+        "x": 2,
+        "y": 8,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.7333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 17,
+        "x": 2,
+        "y": 9,
+        "action": "DOWN",
+        "reward": 0.1,
+        "battery": 0.7167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 18,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.7,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 19,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 20,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 21,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.65,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 22,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 23,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 24,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.6,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 25,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 26,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 27,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.55,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 28,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 29,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 30,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.5,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 31,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 32,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 33,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.45,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 34,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 35,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 36,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.4,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 37,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 38,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 39,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.35,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 40,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 41,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 42,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.3,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 43,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 44,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 45,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.25,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 46,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 47,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 48,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.2,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 49,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 50,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 51,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.15,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 52,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 53,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 54,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.1,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 55,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0833,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 56,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0667,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 57,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.05,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 58,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0333,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 59,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0167,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      },
+      {
+        "step": 60,
+        "x": 2,
+        "y": 9,
+        "action": "WAIT",
+        "reward": 0.1,
+        "battery": 0.0,
+        "message": "Drone is idling (WAIT)... \ud83d\udd0b"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        2,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 6.4,
+    "total_steps": 60
+  },
+  {
+    "task": "drone_env.core.graders:grade_easy",
+    "steps": [
+      {
+        "step": 1,
+        "x": 4,
+        "y": 3,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9833,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 2,
+        "x": 5,
+        "y": 3,
+        "action": "RIGHT",
+        "reward": 0.1,
+        "battery": 0.9667,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 3,
+        "x": 5,
+        "y": 2,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.95,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 4,
+        "x": 6,
+        "y": 2,
+        "action": "RIGHT",
+        "reward": 0.1,
+        "battery": 0.9333,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 5,
+        "x": 6,
+        "y": 1,
+        "action": "UP",
+        "reward": 0.1,
+        "battery": 0.9167,
+        "message": "On road \ud83d\udee3\ufe0f"
+      },
+      {
+        "step": 6,
+        "x": 7,
+        "y": 1,
+        "action": "RIGHT",
+        "reward": 1.05,
+        "battery": 0.9,
+        "message": "\u2705 Delivery 1/1 done!"
+      }
+    ],
+    "grid_meta": {
+      "width": 10,
+      "height": 10
+    },
+    "delivery_positions": [
+      [
+        7,
+        1
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 1.55,
+    "total_steps": 6
   }
 ]

@@ -209,7 +209,7 @@ class DroneObservation(BaseModel):
 | Max Steps | 60 | 100 | 160 |
 | Battery | 60 | 100 | 160 |
 | `r_delivery` | +1.0 | +0.8 | +0.6 |
-| `r_battery_dead` | −0.5 | −0.5 | −1.0 |
+| `r_battery_dead` | 0.10 | 0.15 | 0.25 |
 
 ---
 
@@ -474,11 +474,17 @@ MODEL_NAME=Qwen/Qwen2.5-72B-Instruct python inference.py
 The runner emits structured benchmark-compatible log lines:
 
 ```
-[START] task=easy_delivery env=drone_env_v1 model=Qwen/Qwen2.5-7B-Instruct
-[STEP] step=1 action=RIGHT reward=-0.05 done=false error=null
-[STEP] step=2 action=DOWN reward=-0.05 done=false error=null
+[START] task=drone_env.core.graders:grade_easy env=drone_env_v1 model=Qwen/Qwen2.5-7B-Instruct
+[STEP] step=1 action=RIGHT reward=0.10 done=false error=null
+[STEP] step=2 action=RIGHT reward=0.10 done=false error=null
+[STEP] step=3 action=RIGHT reward=0.10 done=false error=null
+[STEP] step=4 action=LEFT reward=0.10 done=false error=null
+[STEP] step=5 action=RIGHT reward=0.10 done=false error=null
+[STEP] step=6 action=LEFT reward=0.10 done=false error=null
+[STEP] step=7 action=RIGHT reward=0.10 done=false error=null
+[STEP] step=8 action=LEFT reward=0.10 done=false error=null
 ...
-[END] success=true steps=23 score=0.847 rewards=-0.05,-0.05,1.00,...
+[END] success=true steps=23 score=0.847 rewards=0.10,0.10,0.10,0.10,0.10,0.10,0.10,0.10,...
 ```
 
 ### System Prompt
