@@ -44,10 +44,22 @@ API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY") or os.getenv("OPENAI_API
 API_BASE_URL = os.getenv("API_BASE_URL") or "https://router.huggingface.co/v1"
 MODEL_NAME = os.getenv("MODEL_NAME") or "Qwen/Qwen2.5-7B-Instruct"
 
-TASK_NAME = os.getenv("TASK_NAME", "drone_env.graders.easy:grade_easy")
+TASK_MAP = {
+    "easy": "drone_env.graders.easy:grade_easy",
+    "medium": "drone_env.graders.medium:grade_medium",
+    "hard": "drone_env.graders.hard:grade_hard",
+    "easy_delivery": "drone_env.graders.easy:grade_easy",
+    "medium_delivery": "drone_env.graders.medium:grade_medium",
+    "hard_delivery": "drone_env.graders.hard:grade_hard",
+}
+
+# Accepts "easy", "medium", "hard" or the full grader path
+RAW_TASK = os.getenv("TASK_NAME", "easy")
+TASK_NAME = TASK_MAP.get(RAW_TASK, RAW_TASK)
+
 BENCHMARK = os.getenv("DRONE_BENCHMARK", "drone_env_v1")
 
-MAX_STEPS = 60
+MAX_STEPS = 60 # Default fallback
 TEMPERATURE = 0.0
 MAX_TOKENS = 50
 SUCCESS_SCORE_THRESHOLD = 0.5
