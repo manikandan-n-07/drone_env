@@ -294,7 +294,7 @@ function flashBtn(dir) {
 async function doAnalyse() {
     showLoading();
     try {
-        const r = await fetch(`${BASE}/analyse/${currentTask}`);
+        const r = await fetch(`${BASE}/analyse/${encodeURIComponent(currentTask)}`);
         const data = await r.json();
         renderAnalytics(data);
     } finally {
