@@ -44,7 +44,7 @@ API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY") or os.getenv("OPENAI_API
 API_BASE_URL = os.getenv("API_BASE_URL") or "https://router.huggingface.co/v1"
 MODEL_NAME = os.getenv("MODEL_NAME") or "Qwen/Qwen2.5-7B-Instruct"
 
-TASK_NAME = os.getenv("DRONE_TASK", "drone_env.core.graders:grade_easy")
+TASK_NAME = os.getenv("TASK_NAME", "drone_env.graders.easy:grade_easy")
 BENCHMARK = os.getenv("DRONE_BENCHMARK", "drone_env_v1")
 
 MAX_STEPS = 60

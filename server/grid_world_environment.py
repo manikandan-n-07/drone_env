@@ -24,7 +24,7 @@ from drone_env.core.tasks import TASK_CONFIG
 from drone_env.core.drone import compute_next_pos, drain_battery
 from drone_env.core.obstacles import check_move
 from drone_env.core.state_manager import new_episode_state
-from drone_env.core.graders import GRADERS
+from drone_env.graders import GRADERS
 from drone_env.rl.trainer import record_episode
 
 
@@ -33,7 +33,7 @@ class DroneDeliveryEnvironment(Environment):
     def __init__(self):
         super().__init__()
         self._state = DroneState()
-        self._cfg = TASK_CONFIG["drone_env.core.graders:grade_easy"]
+        self._cfg = TASK_CONFIG["drone_env.graders.easy:grade_easy"]
         self._grid: List[List[str]] = []
         self._deliveries: List[Tuple[int, int]] = []
         self._delivered: List[bool] = []
@@ -51,11 +51,11 @@ class DroneDeliveryEnvironment(Environment):
 
         # Map short task IDs (from openenv.yaml) to full grader keys
         _TASK_ID_MAP = {
-            "easy_delivery":   "drone_env.core.graders:grade_easy",
-            "medium_delivery": "drone_env.core.graders:grade_medium",
-            "hard_delivery":   "drone_env.core.graders:grade_hard",
+            "easy_delivery":   "drone_env.graders.easy:grade_easy",
+            "medium_delivery": "drone_env.graders.medium:grade_medium",
+            "hard_delivery":   "drone_env.graders.hard:grade_hard",
         }
-        task = "drone_env.core.graders:grade_easy"
+        task = "drone_env.graders.easy:grade_easy"
         if action and action.task_name:
             name = action.task_name
             if name in _TASK_ID_MAP:

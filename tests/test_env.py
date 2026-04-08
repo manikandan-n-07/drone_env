@@ -12,14 +12,14 @@ from drone_env.core.grid_generator import generate_city_map
 from drone_env.core.tasks import TASK_CONFIG
 from drone_env.core.obstacles import check_move
 from drone_env.core.drone import compute_next_pos, drain_battery
-from drone_env.core.graders import grade_easy, grade_medium, grade_hard
+from drone_env.graders import grade_easy, grade_medium, grade_hard
 from drone_env.models import DroneState
 
 
 # ── Grid generator ────────────────────────────────────────────────────────────
 
 def test_grid_shape():
-    cfg = TASK_CONFIG["easy_delivery"]
+    cfg = TASK_CONFIG["drone_env.graders.easy:grade_easy"]
     rng = torch.Generator(); rng.manual_seed(42)
     grid, deliveries, start = generate_city_map(cfg, rng)
     assert len(grid) == cfg["height"]
@@ -30,7 +30,7 @@ def test_grid_shape():
 
 
 def test_start_on_road():
-    cfg = TASK_CONFIG["easy_delivery"]
+    cfg = TASK_CONFIG["drone_env.graders.easy:grade_easy"]
     rng = torch.Generator(); rng.manual_seed(7)
     grid, _, start = generate_city_map(cfg, rng)
     sx, sy = start
@@ -38,7 +38,7 @@ def test_start_on_road():
 
 
 def test_delivery_cells_present():
-    cfg = TASK_CONFIG["medium_delivery"]
+    cfg = TASK_CONFIG["drone_env.graders.medium:grade_medium"]
     rng = torch.Generator(); rng.manual_seed(99)
     grid, deliveries, _ = generate_city_map(cfg, rng)
     for dx, dy in deliveries:
@@ -129,9 +129,9 @@ def test_grade_medium_hard_bounds():
 # ── Task configs ──────────────────────────────────────────────────────────────
 
 def test_all_tasks_present():
-    assert "easy_delivery" in TASK_CONFIG
-    assert "medium_delivery" in TASK_CONFIG
-    assert "hard_delivery" in TASK_CONFIG
+    assert "drone_env.graders.easy:grade_easy" in TASK_CONFIG
+    assert "drone_env.graders.medium:grade_medium" in TASK_CONFIG
+    assert "drone_env.graders.hard:grade_hard" in TASK_CONFIG
 
 def test_task_has_required_keys():
     required = ["width","height","n_buildings","n_trees","n_obstacles",
@@ -142,9 +142,9 @@ def test_task_has_required_keys():
             assert key in cfg, f"{task} missing key: {key}"
 
 def test_task_difficulty_ordering():
-    easy   = TASK_CONFIG["easy_delivery"]
-    medium = TASK_CONFIG["medium_delivery"]
-    hard   = TASK_CONFIG["hard_delivery"]
+    easy   = TASK_CONFIG["drone_env.graders.easy:grade_easy"]
+    medium = TASK_CONFIG["drone_env.graders.medium:grade_medium"]
+    hard   = TASK_CONFIG["drone_env.graders.hard:grade_hard"]
     assert easy["width"] < medium["width"] < hard["width"]
     assert easy["n_deliveries"] < medium["n_deliveries"] < hard["n_deliveries"]
     assert easy["max_steps"] < medium["max_steps"] < hard["max_steps"]

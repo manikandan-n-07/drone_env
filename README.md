@@ -82,9 +82,12 @@ The codebase follows a clean separation-of-concerns architecture across four dis
 
 ```
 .
+├── graders/                     # Unified Graders Package (Root)
+│   ├── easy.py                  # Easy task scoring logic
+│   ├── medium.py                # Medium task scoring logic
+│   └── hard.py                  # Hard task scoring logic
 ├── core/                        # Simulation Logic Layer
 │   ├── drone.py                 # Movement physics & battery drain
-│   ├── graders.py               # Unified scoring logic (0.01 - 0.99)
 │   ├── grid_generator.py        # Map generation logic
 │   ├── obstacles.py             # Collision & terrain detection
 │   ├── state_manager.py         # Episodic state management
@@ -471,7 +474,7 @@ MODEL_NAME=Qwen/Qwen2.5-72B-Instruct python inference.py
 The runner emits structured benchmark-compatible log lines:
 
 ```
-[START] task=drone_env.core.graders:grade_easy env=drone_env_v1 model=Qwen/Qwen2.5-7B-Instruct
+[START] task=drone_env.graders:grade_easy env=drone_env_v1 model=Qwen/Qwen2.5-7B-Instruct
 [STEP] step=1 action=RIGHT reward=0.10 done=false error=null
 [STEP] step=2 action=RIGHT reward=0.10 done=false error=null
 [STEP] step=3 action=RIGHT reward=0.10 done=false error=null
@@ -568,15 +571,15 @@ app: drone_env.server.app:app
 port: 8000
 tasks:
   - id: easy_delivery
-    grader: drone_env.core.graders:grade_easy
+    grader: drone_env.graders:grade_easy
   - id: medium_delivery
-    grader: drone_env.core.graders:grade_medium
+    grader: drone_env.graders:grade_medium
   - id: hard_delivery
-    grader: drone_env.core.graders:grade_hard
+    grader: drone_env.graders:grade_hard
 graders:
-  - id: drone_env.core.graders:grade_easy
-  - id: drone_env.core.graders:grade_medium
-  - id: drone_env.core.graders:grade_hard
+  - id: drone_env.graders:grade_easy
+  - id: drone_env.graders:grade_medium
+  - id: drone_env.graders:grade_hard
 ```
 
 ### Validate Before Submission
@@ -611,8 +614,20 @@ docker build .
 openenv validate
 ```
 
+#### Local Grader Check
+To verify that all 3 tasks have valid, resolvable graders before pushing:
+```bash
+python check_graders.py
+```
+
 A passing run produces:
 ```
+========================================
+  Summary: 3 valid graders found.
+  🚀 LOCAL CHECK PASSED.
+========================================
+```
+
 ========================================
   All 3/3 checks passed!
   Your submission is ready to submit.
@@ -712,7 +727,7 @@ $$r_{\text{shaping}} = (d_{\text{before}} - d_{\text{after}}) \times 0.05$$
 
 ## Grading & Evaluation
 
-Scores are computed by `core/graders.py` using a unified formula:
+Scores are computed by the `graders/` package using a unified formula:
 
 $$\text{score} = 0.8 \times \underbrace{\frac{\text{deliveries done}}{\text{deliveries total}}}_{\text{delivery ratio}} + 0.2 \times \underbrace{\left( 0.5 \cdot \text{battery} + 0.5 \cdot \left(1 - \frac{\text{steps}}{\text{max steps}}\right) \right)}_{\text{efficiency}}$$
 
@@ -774,19 +789,21 @@ The **SkyRelic** ecosystem is divided into four primary layers, interconnected v
 
 ```
 drone_env/
-├── core/
-│   ├── drone.py               # compute_next_pos(), drain_battery()
-│   ├── graders.py             # grade_easy/medium/hard(), GRADERS dict
-│   ├── grid_generator.py      # generate_city_map(), EMOJI, LEGEND
-│   ├── obstacles.py           # check_move() → outcome, cell_type
-│   ├── state_manager.py       # new_episode_state() → DroneState
-│   └── tasks.py               # TASK_CONFIG dict (all difficulty params)
-├── rl/
-│   ├── model.py               # MapEncoder, PathQNet, ACTIONS, CELL2IDX
-│   ├── policy.py              # EpsilonGreedyPolicy
-│   └── trainer.py             # record_episode(), PathLearner, get_action_from_policy()
-├── server/
-│   ├── app.py                 # FastAPI app, all routes, TerminalLogManager
+├── graders/                     # Unified grader package
+│   ├── __init__.py              # GRADERS lookup dictionary
+│   ├── easy.py                  # Easy task logic
+│   ├── medium.py                # Medium task logic
+│   └── hard.py                  # Hard task logic
+├── core/                        # Simulation physics & tasks
+├── rl/                          # DQN & Neural Training
+├── server/                      # FastAPI & Dashboard
+├── data/                        # Persistence (Memory & Logs)
+├── tests/                       # Unit & API tests
+├── check_graders.py             # Local grader validation script
+├── openenv.yaml                 # Mission Manifest
+├── pyproject.toml               # Package configuration
+└── validate-submission.sh       # Submission validator
+```
 │   ├── grid_world_environment.py  # DroneDeliveryEnvironment (OpenEnv base)
 │   ├── Dockerfile             # Multi-stage production image
 │   └── static/                # Browser dashboard (HTML/JS/CSS)
@@ -887,8 +904,8 @@ Build system uses [Meta's BSD-licensed](https://opensource.org/licenses/BSD-3-Cl
 The **SkyRelic** environment has been updated to fully comply with the **Meta PyTorch Hackathon Phase 2 Deep Validation** requirements.
 
 ### 🛡️ Validation Fixes
-- **Strict Score Clamping**: All mission scores and rewards are now strictly clamped to the **(0.01, 0.99)** range in `core/graders.py` and `server/grid_world_environment.py`. This prevents the "out of range" (exactly 0.0 or 1.0) failures reported by the automated validator.
-- **Full Identity Sync (Grader Discovery)**: Task and grader identifiers have been synchronized across the manifest (`openenv.yaml`), backend API, and simulation core using full Python module paths (e.g., `drone_env.core.graders:grade_easy`). This ensures the Meta validator can successfully discover and import the grading functions.
+- **Strict Score Clamping**: All mission scores and rewards are now strictly clamped to the **(0.01, 0.99)** range in the `graders/` package and `server/grid_world_environment.py`. This prevents the "out of range" (exactly 0.0 or 1.0) failures reported by the automated validator.
+- **Full Identity Sync (Grader Discovery)**: Task and grader identifiers have been synchronized across the manifest (`openenv.yaml`), backend API, and simulation core using full Python module paths (e.g., `drone_env.graders:grade_easy`). This ensures the Meta validator can successfully discover and import the grading functions.
 - **Differentiated Reward Scalars**: To provide clearer learning signals, reward scalars for step, wait, and collision penalties have been updated to difficulty-specific tiers:
     - **Easy Mission**: 0.10 (10%)
     - **Medium Mission**: 0.15 (15%)

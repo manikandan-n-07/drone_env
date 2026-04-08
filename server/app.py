@@ -25,7 +25,7 @@ if str(BASE_DIR) not in sys.path:
 from drone_env.models import DroneAction, DroneObservation, DroneState
 from drone_env.server.grid_world_environment import DroneDeliveryEnvironment
 from drone_env.core.tasks import TASK_CONFIG
-from drone_env.core.graders import GRADERS
+from drone_env.graders import GRADERS
 from drone_env.rl.trainer import PathLearner, get_action_from_policy
 
 app = FastAPI(
@@ -88,9 +88,9 @@ async def metadata():
         "description": "SkyRelic Drone Delivery reinforcement-learning environment with easy/medium/hard delivery tasks on a grid world.",
         "version": "0.2.1",
         "tasks": [
-            {"id": "easy_delivery",  "grader": "drone_env.core.graders:grade_easy"},
-            {"id": "medium_delivery", "grader": "drone_env.core.graders:grade_medium"},
-            {"id": "hard_delivery",  "grader": "drone_env.core.graders:grade_hard"},
+            {"id": "easy_delivery",  "grader": "drone_env.graders.easy:grade_easy"},
+            {"id": "medium_delivery", "grader": "drone_env.graders.medium:grade_medium"},
+            {"id": "hard_delivery",  "grader": "drone_env.graders.hard:grade_hard"},
         ],
     }
 
@@ -144,9 +144,9 @@ async def get_state():
 
 # Task ID → grader key mapping (matches openenv.yaml task ids)
 TASK_ID_TO_GRADER = {
-    "easy_delivery":  "drone_env.core.graders:grade_easy",
-    "medium_delivery": "drone_env.core.graders:grade_medium",
-    "hard_delivery":  "drone_env.core.graders:grade_hard",
+    "easy_delivery":  "drone_env.graders.easy:grade_easy",
+    "medium_delivery": "drone_env.graders.medium:grade_medium",
+    "hard_delivery":  "drone_env.graders.hard:grade_hard",
 }
 
 @app.get("/grade/{task_name}")
@@ -207,7 +207,7 @@ async def get_terminal_logs():
 @app.get("/rewards")
 async def get_rewards():
     """Return the reward configuration for the current task."""
-    task_name = _env.state.task_name or "drone_env.core.graders:grade_easy"
+    task_name = _env.state.task_name or "drone_env.graders.easy:grade_easy"
     config = TASK_CONFIG.get(task_name, {})
     # Filter only reward keys
     rewards = {k: v for k, v in config.items() if k.startswith("r_")}
@@ -248,7 +248,7 @@ async def get_memory_logs():
 
 @app.post("/predict")
 async def predict(obs: DroneObservation):
-    task_name = _env.state.task_name or "drone_env.core.graders:grade_easy"
+    task_name = _env.state.task_name or "drone_env.graders.easy:grade_easy"
     action_str = get_action_from_policy(obs, task_name)
     return {"direction": action_str}
 
