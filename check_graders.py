@@ -42,28 +42,19 @@ def check_graders():
             
             module_path, func_name = grader_str.split(":")
             
-            module = None
-            # Try full path first (as it will be in the platform)
+            # Simple direct import (no fallback, must be robust)
             try:
                 module = importlib.import_module(module_path)
-            except ImportError:
-                # Local fallback: try without 'drone_env.' prefix if we're in the project root
-                if module_path.startswith("drone_env."):
-                    alt_path = module_path.replace("drone_env.", "", 1)
-                    try:
-                        module = importlib.import_module(alt_path)
-                    except ImportError as eb:
-                        print(f"  ❌ Module search failed (tried {module_path} and {alt_path}): {eb}")
+                if module:
+                    func = getattr(module, func_name, None)
+                    if func and callable(func):
+                        print(f"  ✅ SUCCESS: Found {func_name} in {module.__name__}")
+                        valid_count += 1
+                    else:
+                        print(f"  ❌ {func_name} not found or not callable in {module.__name__}")
+            except ImportError as e:
+                print(f"  ❌ Module import failed: {e}")
             
-            if module:
-                func = getattr(module, func_name, None)
-                if func and callable(func):
-                    print(f"  ✅ SUCCESS: Found {func_name} in {module.__name__}")
-                    valid_count += 1
-                else:
-                    print(f"  ❌ {func_name} not found or not callable in {module.__name__}")
-            else:
-                pass # Already printed error
         except Exception as e:
             print(f"  ❌ Error: {e}")
 

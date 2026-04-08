@@ -1,11 +1,9 @@
-# Use official lightweight Python image
 # REBUILD_TIMESTAMP: 2026-04-07 23:30 (Phase2 Fix: /health=healthy, /metadata, /schema, /mcp, httpx)
-FROM python:3.10-slim
+FROM ghcr.io/meta-pytorch/openenv-base:latest
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies (git for building packages if needed)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
@@ -14,17 +12,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY . .
 
 # Install the package and its dependencies
-# pip install -e . uses the pyproject.toml in the current directory
 RUN pip install --no-cache-dir -e .
 RUN pip install --no-cache-dir uvicorn fastapi
 
-# Expose the API port (standard for HF Spaces or custom)
-EXPOSE 8000
-
-# Set environment variables for better logging
+# Set environment variables for better logging and robustness
 ENV PYTHONUNBUFFERED=1
 ENV HF_HOME=/tmp/.cache
+ENV PYTHONPATH="/app:$PYTHONPATH"
+
+# Expose the API port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
 
 # Command to run the FastAPI server
-# This calls the main function in server/app.py which starts uvicorn
-CMD ["python", "server/app.py", "--host", "0.0.0.0", "--port", "8000"]
+# Running from /app ensures server.app:app resolves correctly
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "8000"]

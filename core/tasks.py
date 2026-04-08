@@ -4,7 +4,7 @@ Mission configurations for Drone Delivery missions.
 """
 
 TASK_CONFIG = {
-    "drone_env.graders.easy:grade_easy": {
+    "graders:grade_easy": {
         "width": 10,
         "height": 10,
         "n_buildings": 4,
@@ -24,7 +24,7 @@ TASK_CONFIG = {
         "r_wall": 0.10,
         "r_blocked": 0.10,
     },
-    "drone_env.graders.medium:grade_medium": {
+    "graders:grade_medium": {
         "width": 14,
         "height": 14,
         "n_buildings": 8,
@@ -44,7 +44,7 @@ TASK_CONFIG = {
         "r_wall": 0.15,
         "r_blocked": 0.15,
     },
-    "drone_env.graders.hard:grade_hard": {
+    "graders:grade_hard": {
         "width": 18,
         "height": 18,
         "n_buildings": 12,

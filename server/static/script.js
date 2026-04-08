@@ -17,7 +17,7 @@ const EMOJI = {
 // ═══════════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════════
-let currentTask = 'drone_env.graders.easy:grade_easy'; 
+let currentTask = 'graders:grade_easy'; 
 let autoTimer   = null;
 let logTimer    = null;
 let obs         = null;
@@ -601,9 +601,9 @@ function startNextTask() {
     closeCompletionModal();
     
     const sequence = {
-        'drone_env.graders.easy:grade_easy': 'drone_env.graders.medium:grade_medium',
-        'drone_env.graders.medium:grade_medium': 'drone_env.graders.hard:grade_hard',
-        'drone_env.graders.hard:grade_hard': 'drone_env.graders.easy:grade_easy'
+        'graders:grade_easy': 'graders:grade_medium',
+        'graders:grade_medium': 'graders:grade_hard',
+        'graders:grade_hard': 'graders:grade_easy'
     };
     
     const nextTask = sequence[currentTask] || 'drone_env.graders.easy:grade_easy';
@@ -627,7 +627,7 @@ async function updateMissionLegend() {
         if (!container || !data.tasks) return;
         
         // Ensure tasks are sorted Easy, Medium, Hard
-        const order = ['drone_env.graders.easy:grade_easy', 'drone_env.graders.medium:grade_medium', 'drone_env.graders.hard:grade_hard'];
+        const order = ['graders:grade_easy', 'graders:grade_medium', 'graders:grade_hard'];
         const tasks = data.tasks.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
         
         container.innerHTML = `
