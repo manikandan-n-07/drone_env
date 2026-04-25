@@ -1,4 +1,0 @@
-
->>> Neural Training Engine Started [TASK: hard_delivery]
-Resuming from checkpoint: data\hard\model.pth
-Episode 0/5 | Avg Reward: 3.29 | Epsilon: 0.05 (Periodic Save)
