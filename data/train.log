@@ -1,0 +1,66 @@
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Episode 0/1000 | Avg Reward: -1.45 | Epsilon: 0.99 (Periodic Save)
+Episode 50/1000 | Avg Reward: -4.50 | Epsilon: 0.77 (Periodic Save)
+Episode 100/1000 | Avg Reward: 0.30 | Epsilon: 0.60 (Periodic Save)
+Episode 150/1000 | Avg Reward: 0.15 | Epsilon: 0.47 (Periodic Save)
+Episode 200/1000 | Avg Reward: -1.25 | Epsilon: 0.37 (Periodic Save)
+Episode 250/1000 | Avg Reward: -1.10 | Epsilon: 0.28 (Periodic Save)
+Episode 300/1000 | Avg Reward: 0.70 | Epsilon: 0.22 (Periodic Save)
+Episode 350/1000 | Avg Reward: -4.20 | Epsilon: 0.17 (Periodic Save)
+Episode 400/1000 | Avg Reward: 0.80 | Epsilon: 0.13 (Periodic Save)
+Episode 450/1000 | Avg Reward: 0.60 | Epsilon: 0.10 (Periodic Save)
+Episode 500/1000 | Avg Reward: -3.65 | Epsilon: 0.08 (Periodic Save)
+Episode 550/1000 | Avg Reward: -0.70 | Epsilon: 0.06 (Periodic Save)
+Episode 600/1000 | Avg Reward: -1.55 | Epsilon: 0.05 (Periodic Save)
+Episode 650/1000 | Avg Reward: 1.00 | Epsilon: 0.05 (Periodic Save)
+Episode 700/1000 | Avg Reward: 0.60 | Epsilon: 0.05 (Periodic Save)
+Episode 750/1000 | Avg Reward: -0.60 | Epsilon: 0.05 (Periodic Save)
+Episode 800/1000 | Avg Reward: -0.10 | Epsilon: 0.05 (Periodic Save)
+Episode 850/1000 | Avg Reward: -7.20 | Epsilon: 0.05 (Periodic Save)
+Episode 900/1000 | Avg Reward: 0.90 | Epsilon: 0.05 (Periodic Save)
+Episode 950/1000 | Avg Reward: 1.00 | Epsilon: 0.05 (Periodic Save)
+Training complete. Model saved to data/easy.pth.
+
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Episode 0/5 | Avg Reward: 1.26 | Epsilon: 0.99 (Periodic Save)
+Training complete. Model saved to data/easy.pth.
+
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Resuming from checkpoint: data/easy.pth
+Episode 0/100 | Avg Reward: 2.80 | Epsilon: 0.05 (Periodic Save)
+Episode 50/100 | Avg Reward: 2.96 | Epsilon: 0.05 (Periodic Save)
+Training complete. Model saved to data/easy.pth.
+
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Resuming from checkpoint: data/easy.pth
+Episode 0/100 | Avg Reward: 4.78 | Epsilon: 0.05 (Periodic Save)
+Episode 50/100 | Avg Reward: 2.84 | Epsilon: 0.05 (Periodic Save)
+Training complete. Model saved to data/easy.pth.
+
+>>> Neural Training Engine Started [TASK: medium_delivery]
+Episode 0/100 | Avg Reward: 1.79 | Epsilon: 0.99 (Periodic Save)
+Episode 50/100 | Avg Reward: 2.14 | Epsilon: 0.77 (Periodic Save)
+Training complete. Model saved to data/medium.pth.
+
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Resuming from checkpoint: data/easy/model.pth
+Episode 0/100 | Avg Reward: 2.70 | Epsilon: 0.05 (Periodic Save)
+Episode 50/100 | Avg Reward: 2.86 | Epsilon: 0.05 (Periodic Save)
+
+>>> Neural Training Engine Started [TASK: hard_delivery]
+Episode 0/100 | Avg Reward: 5.37 | Epsilon: 0.99 (Periodic Save)
+
+>>> Neural Training Engine Started [TASK: medium_delivery]
+Resuming from checkpoint: data/medium/model.pth
+Episode 0/100 | Avg Reward: 3.01 | Epsilon: 0.05 (Periodic Save)
+
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Resuming from checkpoint: data/easy/model.pth
+Episode 0/10 | Avg Reward: 2.82 | Epsilon: 0.05 (Periodic Save)
+Training complete. Model saved to data/easy/model.pth.
+
+>>> Neural Training Engine Started [TASK: hard_delivery]
+Resuming from checkpoint: data/hard/model.pth
+Episode 0/100 | Avg Reward: 4.83 | Epsilon: 0.05 (Periodic Save)
+Episode 50/100 | Avg Reward: 4.88 | Epsilon: 0.05 (Periodic Save)
+Training complete. Model saved to data/hard/model.pth.

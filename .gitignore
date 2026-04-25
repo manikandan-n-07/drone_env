@@ -32,7 +32,6 @@ test_output.txt
 .pytest_cache
 
 # Training Artifacts
-data/
 *.pth
 *.ipynb
 *.ipynb_checkpoints/

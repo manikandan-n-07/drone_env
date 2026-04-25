@@ -1,0 +1,3322 @@
+[
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        10,
+        10
+      ],
+      [
+        12,
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        10,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1933,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        10,
+        10
+      ],
+      [
+        12,
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        10,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1933,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        3
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        13,
+        11
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        10,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.0033,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        3
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        13,
+        11
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        10,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.0033,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        6
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        8,
+        5
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.3933,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        6
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        8,
+        5
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.3933,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        13
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        10,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9667,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        13
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        10,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9667,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        12
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9367,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        12
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9367,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        6,
+        7
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        6,
+        7
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        3
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9933,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        3
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9933,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        5
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        13,
+        11
+      ],
+      [
+        14,
+        9
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.0467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        5
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        13,
+        11
+      ],
+      [
+        14,
+        9
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.0467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        1
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        1
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        2,
+        10
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.2733,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        2,
+        10
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.2733,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        14,
+        14
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9667,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        14,
+        14
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.9667,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        8
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.27,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        8
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.27,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        11
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        15,
+        12
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4067,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        11
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        15,
+        12
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4067,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        9
+      ],
+      [
+        15,
+        6
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        12,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 6.2467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        9
+      ],
+      [
+        15,
+        6
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        12,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 6.2467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        2
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        1,
+        14
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.8867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        2
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        1,
+        14
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.8867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        14
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        11,
+        10
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 4.6867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        14
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        11,
+        10
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 4.6867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        14,
+        10
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.8467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        14,
+        10
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 1.8467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.15,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.15,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        13
+      ],
+      [
+        12,
+        9
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        2,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2733,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        13
+      ],
+      [
+        12,
+        9
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        2,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2733,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        3
+      ],
+      [
+        15,
+        8
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.38,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        3
+      ],
+      [
+        15,
+        8
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.38,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        11,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.0967,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        11,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.0967,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        13
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        14,
+        11
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.2967,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        13
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        14,
+        11
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.2967,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        10
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        13,
+        12
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.06,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        10
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        13,
+        12
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.06,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        14,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.03,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        14,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.03,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        2,
+        11
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        15,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        2,
+        11
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        15,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        12
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.0467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        12
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.0467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        7
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        5,
+        12
+      ]
+    ],
+    "deliveries_done": 4,
+    "total_reward": 3.47,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        9
+      ],
+      [
+        11,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        5,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1533,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        9
+      ],
+      [
+        11,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        5,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1533,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        1
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        13,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        1
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        13,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        15,
+        1
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        9,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.3233,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        15,
+        1
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        9,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 4.3233,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        14
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        12,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        14
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        12,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        11
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        6,
+        15
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        12,
+        2
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        11
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        6,
+        15
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        12,
+        2
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.4467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        9,
+        14
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        13,
+        2
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.26,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        9,
+        14
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        13,
+        2
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.26,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        14
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        11,
+        10
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3267,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        14
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        12,
+        11
+      ],
+      [
+        11,
+        10
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3267,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        11
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        11
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        7
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        0,
+        14
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.19,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        11,
+        7
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        0,
+        14
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.19,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        4
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        7,
+        1
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.62,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        4
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        7,
+        1
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.62,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        6,
+        1
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        15,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        6,
+        1
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        15,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4467,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        12
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1933,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        12
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1933,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        4
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3133,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        12,
+        4
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3133,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        4
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        11,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4967,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        4
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        11,
+        3
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4967,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        14
+      ],
+      [
+        15,
+        14
+      ],
+      [
+        11,
+        9
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        12,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        14
+      ],
+      [
+        15,
+        14
+      ],
+      [
+        11,
+        9
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        12,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.3,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        1
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        2,
+        8
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.82,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        1
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        2,
+        8
+      ]
+    ],
+    "deliveries_done": 1,
+    "total_reward": 2.82,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2333,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.2333,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        12
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        13,
+        9
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        14,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.46,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        4,
+        12
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        13,
+        9
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        14,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.46,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        15,
+        1
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4567,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        15,
+        1
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4567,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        2
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        0,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.6967,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        13,
+        2
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        0,
+        11
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.6967,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4867,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.4867,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        5,
+        2
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        14,
+        9
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        5,
+        2
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        14,
+        9
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.1667,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_medium",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.5267,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.5267,
+    "total_steps": 0
+  },
+  {
+    "task": "graders:grade_hard",
+    "steps": [],
+    "grid_meta": {
+      "width": 20,
+      "height": 20
+    },
+    "delivery_positions": [
+      [
+        4,
+        19
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        7,
+        19
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        19,
+        5
+      ],
+      [
+        0,
+        17
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        13,
+        14
+      ]
+    ],
+    "deliveries_done": 8,
+    "total_reward": 5.915,
+    "total_steps": 0
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        10,
+        3
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        10,
+        9
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.0067,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        6,
+        1
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        5,
+        9
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 2.9133,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        5,
+        9
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        9,
+        5
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.3933,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        3,
+        11
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        3,
+        15
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.4333,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        8,
+        6
+      ],
+      [
+        11,
+        5
+      ],
+      [
+        14,
+        6
+      ],
+      [
+        11,
+        10
+      ],
+      [
+        15,
+        4
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.26,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        2,
+        9
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        11,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 5.2567,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        9,
+        10
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        2,
+        13
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.4467,
+    "total_steps": 0
+  },
+  {
+    "task": "medium_delivery",
+    "steps": [],
+    "grid_meta": {
+      "width": 16,
+      "height": 16
+    },
+    "delivery_positions": [
+      [
+        14,
+        15
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "deliveries_done": 0,
+    "total_reward": 3.42,
+    "total_steps": 0
+  }
+]

@@ -29,7 +29,7 @@ short_description: Autonomous drone delivery RL environment.
 <img src="https://img.shields.io/badge/Docker-Supported-2496ED?style=for-the-badge&logo=docker" />
 <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 
-# 🚁 SkyRelic Drone Env v0.3.0
+# 🚁 SkyRelic Multi-Agent Drone Env
 ### Autonomous Multi-Agent Neural Navigation Framework
 
 **A high-fidelity project for training and evaluating autonomous drone fleets. Featuring a modular architecture, real-time telemetry, and synchronized training logs across the entire ecosystem.**
