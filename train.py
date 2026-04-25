@@ -104,9 +104,26 @@ def train(task_name: str, episodes: int, device_name: str):
 
     # Automatically resume if model exists
     task_short = task_name.split('_')[0]
-    model_dir = f"data/{task_short}"
-    os.makedirs(model_dir, exist_ok=True)
-    model_path = f"{model_dir}/model.pth"
+    model_dir = Path("data") / task_short
+    model_dir.mkdir(parents=True, exist_ok=True)
+    model_path = model_dir / "model.pth"
+    csv_path = model_dir / "train_metrics.csv"
+    
+    # Initialize or Fix CSV Headers
+    header = "episode,reward,moving_avg_reward,epsilon,loss,deliveries,steps\n"
+    if not csv_path.exists():
+        with open(csv_path, "w") as f:
+            f.write(header)
+    else:
+        # Check if first line is the header, if not, prepend it
+        with open(csv_path, "r") as f:
+            first_line = f.readline()
+        if first_line != header:
+            with open(csv_path, "r") as f:
+                content = f.read()
+            with open(csv_path, "w") as f:
+                f.write(header + content)
+            
     if os.path.exists(model_path):
         print(f"Loading existing weights from {model_path}...")
         try:
@@ -123,9 +140,13 @@ def train(task_name: str, episodes: int, device_name: str):
         state_t = obs_to_tensors(obs, device)
         total_reward = 0
         done = False
-
-        while not done:
-            # Select Action
+        # Episode loop
+        episode_steps = []
+        step_count = 0
+        
+        while not done and step_count < 200:
+            step_count += 1
+            # Epsilon-greedy
             if random.random() < epsilon:
                 action_idx = random.randint(0, len(ACTIONS) - 1)
             else:
@@ -135,6 +156,21 @@ def train(task_name: str, episodes: int, device_name: str):
 
             action_str = ACTIONS[action_idx]
             
+            # Record ALL drones in the fleet for this step
+            step_data = {
+                "step": step_count,
+                "drones": []
+            }
+            for d in obs.drones:
+                step_data["drones"].append({
+                    "id": d.id,
+                    "x": d.x,
+                    "y": d.y,
+                    "battery": d.battery,
+                    "action": action_str if d.id == 0 else "WAIT" 
+                })
+            episode_steps.append(step_data)
+
             # Step
             next_obs = env.step(DroneAction(direction=action_str))
             reward = next_obs.reward_last
@@ -146,6 +182,7 @@ def train(task_name: str, episodes: int, device_name: str):
             # Save to buffer
             memory.push(state_t, action_idx, reward, next_state_t, done)
             state_t = next_state_t
+            obs = next_obs
 
             # Optimize
             if len(memory) > BATCH_SIZE:
@@ -186,13 +223,14 @@ def train(task_name: str, episodes: int, device_name: str):
         try:
             record_episode(
                 task=task_name,
-                steps=[], 
+                steps=episode_steps, 
                 grid_meta=dict(width=env._cfg["width"], height=env._cfg["height"]),
                 delivery_positions=[list(p) for p in env._deliveries],
-                deliveries_done=env._state.deliveries_done,
+                deliveries_done=int(next_obs.deliveries_done),
                 total_reward=float(round(total_reward, 4))
             )
-        except Exception:
+        except Exception as e:
+            print(f"[DEBUG] Failed to record episode: {e}")
             pass
         
         epsilon = max(EPS_END, epsilon * EPS_DECAY)
@@ -200,6 +238,12 @@ def train(task_name: str, episodes: int, device_name: str):
         if ep % TARGET_UPDATE == 0:
             target_net.load_state_dict(policy_net.state_dict())
             
+        # Save metrics to CSV for EVERY episode
+        avg_loss = sum(training_losses[-10:]) / 10 if len(training_losses) >= 10 else 0
+        avg_reward_curve = sum(avg_reward_history[-10:]) / 10 if len(avg_reward_history) >= 10 else total_reward
+        with open(csv_path, "a") as f:
+            f.write(f"{ep},{total_reward:.4f},{avg_reward_curve:.4f},{epsilon:.4f},{avg_loss:.6f},{next_obs.deliveries_done},{step_count}\n")
+
         if ep % 50 == 0:
             log_msg = f"Episode {ep}/{episodes} | Avg Reward: {total_reward:.2f} | Epsilon: {epsilon:.2f}"
             print(log_msg)
