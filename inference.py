@@ -1,10 +1,10 @@
 """
-SkyRelic Drone Delivery: Standardized Inference Script
+SkyRelic Drone Delivery: Standardized Inference Script (v0.3.2)
 ===================================================
 MANDATORY
-- All 3 tasks (easy, medium, hard) are executed sequentially to satisfy Phase 2 validation.
+- CLI supports --task and --steps for targeted testing.
 - STDOUT FORMAT: [START], [STEP], [END]
-- Participants must use OpenAI Client for all LLM calls.
+- Logic: High-fidelity LLM reasoning with heuristic fallback.
 """
 
 import asyncio
@@ -12,6 +12,7 @@ import os
 import textwrap
 import json
 import sys
+import argparse
 from typing import List, Optional
 from pathlib import Path
 from pydantic import BaseModel, Field
@@ -45,7 +46,6 @@ def load_dotenv():
 load_dotenv()
 
 # --- Configuration ------------------------------------------------------------
-IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
 API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY") or os.getenv("OPENAI_API_KEY") or "EMPTY_KEY"
 API_BASE_URL = os.getenv("API_BASE_URL") or "https://router.huggingface.co/v1"
 MODEL_NAME = os.getenv("MODEL_NAME") or "Qwen/Qwen2.5-7B-Instruct"
@@ -102,8 +102,7 @@ def log_step(step: int, action: str, reward: float, done: bool, error: Optional[
     print(f"[STEP] step={step} action={action} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
 
 def log_end(success: bool, steps: int, score: float, rewards: List[float]) -> None:
-    rewards_str = ",".join(f"{r:.2f}" for r in rewards)
-    print(f"[END] success={str(success).lower()} steps={steps} score={score:.3f} rewards={rewards_str}", flush=True)
+    print(f"[END] success={str(success).lower()} steps={steps} final_score={score:.3f}", flush=True)
 
 # --- Agent Logic -------------------------------------------------------------
 
@@ -118,6 +117,7 @@ def get_action(client: OpenAI, obs: DroneObservation) -> NavigationAction:
             ],
             temperature=TEMPERATURE,
             response_format={"type": "json_object"},
+            max_tokens=100
         )
         raw = completion.choices[0].message.content or "{}"
         data = json.loads(raw)
@@ -130,16 +130,13 @@ def get_action(client: OpenAI, obs: DroneObservation) -> NavigationAction:
         return action
     except Exception as exc:
         print(f"[DEBUG] Model request failed: {exc}. Activating heuristic fallback...", flush=True)
-        # Fallback to local heuristic
         heuristic_actions = get_action_from_policy(obs)
-        # Use first drone's action as the primary direction for legacy compatibility
-        # if needed, but the loop below will handle the dictionary.
         fallback_dir = heuristic_actions.get(0, "WAIT")
-        return NavigationAction(reasoning="Heuristic Fallback (Quota/Network Error)", direction=fallback_dir)
+        return NavigationAction(reasoning="Heuristic Fallback", direction=fallback_dir)
 
 # --- Run Loop ----------------------------------------------------------------
 
-async def run_task(task_id: str, env: DroneDeliveryEnvironment, client: OpenAI) -> float:
+async def run_task(task_id: str, env: DroneDeliveryEnvironment, client: OpenAI, step_limit: int = None) -> float:
     rewards: List[float] = []
     steps_taken = 0
     score = 0.01
@@ -149,28 +146,25 @@ async def run_task(task_id: str, env: DroneDeliveryEnvironment, client: OpenAI) 
 
     try:
         obs = env.reset(DroneAction(task_name=task_id))
-        max_steps = int(obs.max_steps) if obs.max_steps else 60
+        max_steps = step_limit if step_limit else (int(obs.max_steps) if obs.max_steps else 60)
 
         for step in range(1, max_steps + 1):
             if obs.done:
                 break
 
-            # Try LLM first
+            # AI Decision
             nav_action = get_action(client, obs)
             action_str = nav_action.direction
             
-            # If LLM failed/WAITed, we can double-check if heuristic wants to move
+            # Application
             if action_str == "WAIT":
                 h_actions = get_action_from_policy(obs)
-                # Apply heuristic to all drones directly to ensure nobody is stuck
                 obs = env.step(DroneAction(actions=h_actions))
             else:
-                # Use LLM direction for all (legacy) or just drone 0
                 obs = env.step(DroneAction(direction=action_str))
             
             reward = float(obs.reward_last)
             done = bool(obs.done)
-            
             rewards.append(reward)
             steps_taken = step
             log_step(step=step, action=action_str, reward=reward, done=done, error=None)
@@ -196,11 +190,19 @@ async def run_task(task_id: str, env: DroneDeliveryEnvironment, client: OpenAI) 
     return score
 
 async def main() -> None:
+    parser = argparse.ArgumentParser(description="SkyRelic Inference Engine")
+    parser.add_argument("--task", type=str, default="all", choices=["easy_delivery", "medium_delivery", "hard_delivery", "all"])
+    parser.add_argument("--steps", type=int, default=0, help="Override max steps for the mission")
+    args = parser.parse_args()
+
     client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
     env = DroneDeliveryEnvironment()
 
-    for task_id in ALL_TASKS:
-        await run_task(task_id, env, client)
+    tasks_to_run = ALL_TASKS if args.task == "all" else [args.task]
+    step_limit = args.steps if args.steps > 0 else None
+
+    for task_id in tasks_to_run:
+        await run_task(task_id, env, client, step_limit)
 
 if __name__ == "__main__":
     asyncio.run(main())

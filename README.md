@@ -51,12 +51,18 @@ short_description: Autonomous drone delivery RL environment.
 | **Train Medium (GPU)** | `uv run python train.py --task medium_delivery --episodes 100 --gpu` |
 | **Train Hard (GPU)** | `uv run python train.py --task hard_delivery --episodes 100 --gpu` |
 | **Run AI Inference** | `uv run python inference.py` |
+| **Run AI Seperetely Inference** | `uv run python inference.py --task easy_delivery --steps 50` |
 | **Local Validation** | `uv run openenv validate` |
 | **Docker Build** | `docker build -t drone_env .` |
 | **View Folders** | `dir data or dir results` |
 | **Push to GitHub** | `git add . ; git commit -m "update" ; git push origin main` |
 | **Deploy to HF** | `git push hf main` |
+|
+```
+Targeted Testing: Use --task to choose easy_delivery, medium_delivery, or hard_delivery.
 
+Step Limit: Use --steps 50 to force the simulation to end after 50 steps.
+```
 ---
 
 ## 📋 Table of Contents
