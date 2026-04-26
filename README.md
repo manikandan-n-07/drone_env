@@ -21,6 +21,7 @@ short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 
 <div align="center">
 
+<img src="https://img.shields.io/badge/Accelerated%20by-Unsloth-black?style=for-the-badge&logo=unsloth" />
 <img src="https://img.shields.io/badge/Multi--Agent-Supported-success?style=for-the-badge" />
 <img src="https://img.shields.io/badge/OpenEnv-Compatible-blueviolet?style=for-the-badge&logo=huggingface" />
 <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python" />
@@ -30,7 +31,7 @@ short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 
 # 🚁 SkyRelic Multi-Agent Drone Env
-### Autonomous Multi-Agent Neural Navigation Framework
+### Autonomous Multi-Agent Drone Delivery Environment
 
 **A high-fidelity project for training and evaluating autonomous drone fleets. Featuring a modular architecture, real-time telemetry, and synchronized training logs across the entire ecosystem.**
 
@@ -47,9 +48,9 @@ short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 | **Setup Project** | `uv sync` |
 | **Dashboard Server** | `uv run python server/app.py` |
 | **Train Full Fleet** | `uv run python train.py --task all` |
-| **Train Easy (GPU)** | `uv run python train.py --task easy_delivery --episodes 100 --gpu` |
-| **Train Medium (GPU)** | `uv run python train.py --task medium_delivery --episodes 100 --gpu` |
-| **Train Hard (GPU)** | `uv run python train.py --task hard_delivery --episodes 100 --gpu` |
+| **Train Easy (GPU)** | `uv run python train.py --task easy_delivery --episodes 500 --gpu` |
+| **Train Medium (GPU)** | `uv run python train.py --task medium_delivery --episodes 1500 --gpu` |
+| **Train Hard (GPU)** | `uv run python train.py --task hard_delivery --episodes 2500 --gpu` |
 | **Run AI Inference** | `uv run python inference.py` |
 | **Run AI Seperetely Inference** | `uv run python inference.py --task easy_delivery --steps 50` |
 | **Local Validation** | `uv run openenv validate` |
@@ -63,6 +64,45 @@ Targeted Testing: Use --task to choose easy_delivery, medium_delivery, or hard_d
 
 Step Limit: Use --steps 50 to force the simulation to end after 50 steps.
 ```
+---
+## Genetic AI Brain (Unsloth-Powered)
+
+When you run with `--unsloth`, the drone transitions from a simple "if-else" agent to a **Reasoning Agent**.
+
+| Component | Technical Specification |
+| :--- | :--- |
+| **Base Model** | Unsloth Llama-3 (8B) - 4-bit Quantized |
+| **Training Technique** | QLoRA (Rank 16, Alpha 32) |
+| **Context Window** | 2,048 Tokens |
+| **Optimization** | 2.5x Faster via Unsloth Trition Kernels |
+| **Output Path** | `outputs/drone_llm_adapter/` |
+
+### How it Works
+1. **Teacher Stage (RL):** The DQN agent solves the delivery task using trial-and-error.
+2. **Distillation Stage:** The expert paths are converted into Alpaca-style instructions.
+3. **Reasoning Stage:** The LLM is fine-tuned to explain *why* it makes a move (e.g., "Moving LEFT to avoid collision with Drone 2 while battery is low").
+
+---
+
+## The Drone Brain Pipeline: RL + Unsloth
+
+SkyRelic now features a **dual-stage intelligence pipeline** that bridges the gap between raw coordination and high-level reasoning.
+
+### Stage 1: The Expert (RL Experience)
+We first use **Reinforcement Learning (DQN)** to let the drones "play" the mission. They explore millions of possibilities, learn from crashes, and eventually find the most efficient paths. These "perfect flights" are saved as **Expert Trajectories** in `data/memory.json`.
+| Configuration | Command |
+| :--- | :--- |
+| **Train + Unsloth (Full)** | `uv run python train.py --task all --unsloth --gpu` |
+| **Train Easy + Unsloth** | `uv run python train.py --task easy_delivery --episodes 500 --unsloth --gpu` |
+| **Train Medium + Unsloth** | `uv run python train.py --task medium_delivery --episodes 1500 --unsloth --gpu` |
+| **Train Hard + Unsloth** | `uv run python train.py --task hard_delivery --episodes 2500 --unsloth --gpu` |
+
+### Stage 2: The Reasoning (Unsloth Fine-Tuning)
+We then use **Unsloth** to "teach" those expert paths to a Large Language Model (like Llama-3). 
+*   **Speed**: Unsloth makes this fine-tuning **2x faster** and uses **70% less VRAM**.
+*   **From Math to Logic**: While the RL agent only understands numbers, the Unsloth-trained LLM understands **navigation logic**. It can explain its moves (e.g., *"Choosing LEFT to avoid the building at (4,2) while my battery is at 45%"*).
+*   **One-Click Pipeline**: Run `python train.py --unsloth` to collect data and fine-tune the LLM in a single pass.
+
 ---
 
 ## 📋 Table of Contents

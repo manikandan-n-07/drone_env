@@ -81,7 +81,7 @@ def obs_to_tensors(obs, drone_idx, device):
     return grid_t, drone_xy, battery, target_xy
 
 # ── Training Loop ─────────────────────────────────────────────────────────────
-def train(task_name: str, episodes: int, device_name: str):
+def train(task_name: str, episodes: int, device_name: str, run_unsloth: bool = False):
     device = torch.device(device_name)
     print(f"Starting training for {task_name} on {device}...")
 
@@ -280,6 +280,18 @@ def train(task_name: str, episodes: int, device_name: str):
     with open("data/train.log", "a") as f:
         f.write(msg + "\n")
 
+    # 13. End Training
+    print(f"\n>>> Training Complete. Best Avg Reward: {max(avg_reward_history) if avg_reward_history else 0:.2f}")
+
+    # 14. Optional: Run Unsloth Fine-tuning
+    if run_unsloth:
+        print("\n>>> Starting Unsloth LLM Fine-tuning Stage...")
+        try:
+            import subprocess
+            subprocess.run([sys.executable, "rl/unsloth_trainer.py"], check=True)
+        except Exception as e:
+            print(f"!!! Unsloth training failed: {e}")
+
     # Generate Evidence Plots
     task_short = task_name.split('_')[0]
     result_dir = f"results/{task_short}"
@@ -317,6 +329,7 @@ if __name__ == "__main__":
     parser.add_argument("--task", type=str, default="easy_delivery", help="Task name (easy_delivery, medium_delivery, hard_delivery) or 'all'")
     parser.add_argument("--episodes", type=int, default=None, help="Number of episodes (overrides defaults)")
     parser.add_argument("--gpu", action="store_true", help="Use GPU if available")
+    parser.add_argument("--unsloth", action="store_true", help="Run Unsloth LLM fine-tuning after RL training")
     args = parser.parse_args()
 
     device = "cuda" if args.gpu and torch.cuda.is_available() else "cpu"
@@ -336,4 +349,4 @@ if __name__ == "__main__":
     for task in tasks_to_run:
         eps = args.episodes if args.episodes is not None else TASK_DEFAULTS.get(task, 100)
         print(f"\n{'='*60}\nENQUEUING TASK: {task} | TARGET: {eps} EPISODES\n{'='*60}\n")
-        train(task, eps, device)
+        train(task, eps, device, args.unsloth)

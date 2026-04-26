@@ -25,6 +25,12 @@ dependencies = [
     "pandas>=2.0.0",
     "typer>=0.12.3",
     "click>=8.1.7",
+    "unsloth",
+    "trl<0.9.0",
+    "peft",
+    "accelerate",
+    "bitsandbytes",
+    "xformers",
 ]
 
 [project.optional-dependencies]
