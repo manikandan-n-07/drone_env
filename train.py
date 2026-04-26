@@ -85,8 +85,12 @@ def train(task_name: str, episodes: int, device_name: str, run_unsloth: bool = F
     device = torch.device(device_name)
     print(f"Starting training for {task_name} on {device}...")
 
-    os.makedirs("data", exist_ok=True)
-    with open("data/train.log", "a") as f:
+    task_short = task_name.split('_')[0]
+    task_dir = f"data/{task_short}"
+    os.makedirs(task_dir, exist_ok=True)
+    task_log = f"{task_dir}/train.log"
+
+    with open(task_log, "a") as f:
         f.write(f"\n>>> Neural Training Engine Started [TASK: {task_name}]\n")
         
     env = DroneDeliveryEnvironment()
@@ -261,7 +265,7 @@ def train(task_name: str, episodes: int, device_name: str, run_unsloth: bool = F
             log_msg = f"Episode {ep}/{episodes} | Avg Reward: {total_reward:.2f} | Epsilon: {epsilon:.2f}"
             print(log_msg)
             torch.save(policy_net.state_dict(), model_path)
-            with open("data/train.log", "a") as f:
+            with open(task_log, "a") as f:
                 f.write(log_msg + " (Periodic Save)\n")
         
         episode_rewards.append(total_reward)
@@ -277,7 +281,7 @@ def train(task_name: str, episodes: int, device_name: str, run_unsloth: bool = F
     
     msg = f"Training complete. Model saved to {model_path}."
     print(msg)
-    with open("data/train.log", "a") as f:
+    with open(task_log, "a") as f:
         f.write(msg + "\n")
 
     # 13. End Training
