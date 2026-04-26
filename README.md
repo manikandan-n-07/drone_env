@@ -1,5 +1,5 @@
 ---
-title: SkyRelic Drone Delivery Environment
+title: SkyRelic Multi-Agent Drone Delivery Environment
 emoji: 🚁
 colorFrom: blue
 colorTo: indigo
@@ -16,7 +16,7 @@ tags:
   - pytorch
   - autonomous-agents
   - grid-world
-short_description: Autonomous drone delivery RL environment.
+short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 ---
 
 <div align="center">

@@ -51,31 +51,32 @@ class ReplayBuffer:
         return len(self.buffer)
 
 # ── Helper to process observations ────────────────────────────────────────────
-def obs_to_tensors(obs, device):
-    """Converts a DroneObservation to the tensors required by PathQNet."""
+def obs_to_tensors(obs, drone_idx, device):
+    """Converts a DroneObservation for a specific drone to the tensors required by PathQNet."""
     # 1. Grid (H*W)
-    # Using cell_types instead of emojis for better robustness
     grid = obs.cell_types
     flat_grid = []
     for row in grid:
         for cell in row:
-            # Map emoji back to int (simplified)
-            idx = CELL2IDX.get(cell, 0) # default road
+            idx = CELL2IDX.get(cell, 0)
             flat_grid.append(idx)
     grid_t = torch.tensor([flat_grid], dtype=torch.long, device=device)
 
-    # 2. Drone XY (normalized)
-    drone_xy = torch.tensor([[obs.drone_x / obs.grid_width, obs.drone_y / obs.grid_height]], dtype=torch.float, device=device)
+    # 2. Specific Drone XY (normalized)
+    drone = obs.drones[drone_idx]
+    drone_xy = torch.tensor([[drone.x / obs.grid_width, drone.y / obs.grid_height]], dtype=torch.float, device=device)
 
     # 3. Battery (0-1)
-    battery = torch.tensor([[obs.battery]], dtype=torch.float, device=device)
+    battery = torch.tensor([[drone.battery]], dtype=torch.float, device=device)
 
     # 4. Target XY (normalized)
-    if obs.current_target:
-        tx, ty = obs.current_target
-        target_xy = torch.tensor([[tx / obs.grid_width, ty / obs.grid_height]], dtype=torch.float, device=device)
-    else:
-        target_xy = torch.tensor([[0.0, 0.0]], dtype=torch.float, device=device)
+    # Get target coordinates for THIS specific drone
+    target_xy_val = [0.0, 0.0]
+    if drone.target_id is not None and drone.target_id < len(obs.targets):
+        tx, ty = obs.targets[drone.target_id]
+        target_xy_val = [tx / obs.grid_width, ty / obs.grid_height]
+    
+    target_xy = torch.tensor([target_xy_val], dtype=torch.float, device=device)
 
     return grid_t, drone_xy, battery, target_xy
 
@@ -137,26 +138,38 @@ def train(task_name: str, episodes: int, device_name: str):
 
     for ep in range(episodes):
         obs = env.reset(DroneAction(task_name=task_name))
-        state_t = obs_to_tensors(obs, device)
         total_reward = 0
         done = False
         # Episode loop
         episode_steps = []
         step_count = 0
         
-        while not done and step_count < 200:
+        max_ep_steps = 250 if "hard" in task_name else (150 if "medium" in task_name else 100)
+        
+        while not done and step_count < max_ep_steps:
             step_count += 1
-            # Epsilon-greedy
-            if random.random() < epsilon:
-                action_idx = random.randint(0, len(ACTIONS) - 1)
-            else:
-                with torch.no_grad():
-                    q_values = policy_net(*state_t)
-                    action_idx = q_values.argmax().item()
-
-            action_str = ACTIONS[action_idx]
             
-            # Record ALL drones in the fleet for this step
+            fleet_actions = {}
+            fleet_action_indices = {}
+            fleet_states_t = {}
+
+            # 1. Action selection for EACH drone in the fleet
+            for i, drone in enumerate(obs.drones):
+                state_t = obs_to_tensors(obs, i, device)
+                fleet_states_t[drone.id] = state_t
+                
+                # Epsilon-greedy
+                if random.random() < epsilon:
+                    action_idx = random.randint(0, len(ACTIONS) - 1)
+                else:
+                    with torch.no_grad():
+                        q_values = policy_net(*state_t)
+                        action_idx = q_values.argmax().item()
+                
+                fleet_action_indices[drone.id] = action_idx
+                fleet_actions[drone.id] = ACTIONS[action_idx]
+
+            # 2. Record step data for visualization
             step_data = {
                 "step": step_count,
                 "drones": []
@@ -167,21 +180,21 @@ def train(task_name: str, episodes: int, device_name: str):
                     "x": d.x,
                     "y": d.y,
                     "battery": d.battery,
-                    "action": action_str if d.id == 0 else "WAIT" 
+                    "action": fleet_actions.get(d.id, "WAIT")
                 })
             episode_steps.append(step_data)
 
-            # Step
-            next_obs = env.step(DroneAction(direction=action_str))
-            reward = next_obs.reward_last
+            # 3. Collaborative Step
+            next_obs = env.step(DroneAction(actions=fleet_actions))
+            reward = next_obs.reward_last # Average team reward
             done = next_obs.done
             total_reward += reward
 
-            next_state_t = obs_to_tensors(next_obs, device)
+            # 4. Save experiences to buffer (One sample per drone)
+            for i, drone in enumerate(obs.drones):
+                next_state_t = obs_to_tensors(next_obs, i, device)
+                memory.push(fleet_states_t[drone.id], fleet_action_indices[drone.id], reward, next_state_t, done)
             
-            # Save to buffer
-            memory.push(state_t, action_idx, reward, next_state_t, done)
-            state_t = next_state_t
             obs = next_obs
 
             # Optimize
