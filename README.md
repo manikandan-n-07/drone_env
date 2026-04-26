@@ -33,15 +33,42 @@ short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 # 🚁 SkyRelic Multi-Agent Drone Env
 ### Autonomous Multi-Agent Drone Delivery Environment
 
-**A high-fidelity project for training and evaluating autonomous drone fleets. Featuring a modular architecture, real-time telemetry, and synchronized training logs across the entire ecosystem.**
 
-[**🌐 Live Demo**](https://manikandan-n-07-drone-env.hf.space) · [**📖 API Docs**](http://localhost:8000/docs) · [**📦 PyPI**](https://pypi.org/project/drone-env) · [**🐛 Issues**](https://github.com/manikandan-n-07/drone-env/issues)
+**SkyRelic solves the complexity of urban logistics by providing a high-fidelity, multi-agent reinforcement learning environment. As cities grow, the need for efficient, autonomous coordination of drone fleets becomes critical. SkyRelic offers a modular architecture, real-time telemetry, and a dual-stage RL+LLM training pipeline to bridge the gap between navigation and reasoning.**
+
 
 </div>
 
 ---
+# LINKS
 
-## 🚀 Command Quick Reference
+## GitHub
+
+[*https://github.com/manikandan-n-07/drone_env*](https://github.com/manikandan-n-07/drone_env)
+
+---
+
+## Google Colab Notebook
+
+[*https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb*](https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb)
+
+---
+
+## Hugging Face Space
+
+[*https://huggingface.co/spaces/manikandan-n-07/drone_env*](https://huggingface.co/spaces/manikandan-n-07/drone_env)
+
+---
+
+## Technical Blog
+
+[*https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md*](https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md)
+
+---
+
+---
+
+## Command Quick Reference
 
 | Action | Command |
 | :--- | :--- |
@@ -59,11 +86,80 @@ short_description: Autonomous Multi-Agent Drone Delivery RL Environment.
 | **Push to GitHub** | `git add . ; git commit -m "update" ; git push origin main` |
 | **Deploy to HF** | `git push hf main` |
 |
+
+---
+
+## Latest openenv-core Version (v0.2.3) Verification
+The environment is synchronized with the latest **OpenEnv Core (v0.2.3)** to ensure full compliance with the Meta Hackathon standards.
+
+<div align="center">
+  <img src="./results/version_verification.png" width="150%" />
+</div>
+
+---
+
+## Training Results & Performance
+
+Below is the evidence of convergence across our three training tiers. These results demonstrate the agent's ability to learn complex navigation strategies from scratch.
+
+---
+
+### Easy Performance
+<div align="center">
+  <img src="./results/easy/reward_curve.png" width="100%" />
+  <img src="./results/easy/loss_curve.png" width="100%" />
+  <img src="./results/easy/epsilon_curve.png" width="100%" />
+
+---
+
+### Medium Performance
+<div align="center">
+  <img src="./results/medium/reward_curve.png" width="100%" />
+  <img src="./results/medium/loss_curve.png" width="100%" />
+  <img src="./results/medium/epsilon_curve.png" width="100%" />
+  <p><i>Consistent learning curves across different difficulty settings.</i></p>
+</div>
+
+---
+
+### Hard Task Performance
+The hard task involves a large grid with multiple drones and high obstacle density.
+<div align="center">
+  <img src="./results/hard/reward_curve.png" width="100%" />
+  <img src="./results/hard/loss_curve.png" width="100%" />
+  <img src="./results/hard/epsilon_curve.png" width="100%" />
+  <p><i>Left: Reward progression showing steady improvement. Right: Loss curve showing stable convergence.</i></p>
+</div>
+
+---
+
 ```
 Targeted Testing: Use --task to choose easy_delivery, medium_delivery, or hard_delivery.
 
 Step Limit: Use --steps 50 to force the simulation to end after 50 steps.
 ```
+
+---
+
+## 🛸 The Operational Narrative: Fleet Intelligence in Action
+
+### 📡 Phase 1: The Godown Handshake
+
+When a drone initiates its mission, it first establishes a secure telemetry link with the **Godown (Central Hub)**. As the drone approaches the loading zone, it transmits its current battery level and mechanical health status. The Godown's AI orchestrator confirms the delivery coordinates. Once the cargo is secured, the drone broadcasts a "Mission Active" signal to the central grid. Upon successful delivery, the drone updates the Godown's ledger in real-time, validating the task completion.
+
+
+### Phase 2: Mesh-Network Communication
+
+In the dense airspace of high-difficulty zones, drones are equipped with localized peer-to-peer mesh networking. This allows for real-time swarm intelligence.
+
+**Collision Avoidance**: Drones exchange trajectory intent to navigate narrow corridors without conflict.
+
+**Resource Optimization**: Drones communicate battery levels to the fleet, allowing those with critical power to be prioritized for charging pads.
+
+**Dynamic Pathing**: If one drone detects an obstacle, it broadcasts the coordinate "blackout" to all nearby units, ensuring the entire fleet adapts instantly.
+
+---
+
 ---
 ## Genetic AI Brain (Unsloth-Powered)
 

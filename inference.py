@@ -120,6 +120,29 @@ def get_api_action(client: OpenAI, obs: DroneObservation) -> NavigationAction:
     except Exception:
         return NavigationAction(reasoning="API Error Fallback", direction="WAIT")
 
+def get_drone_obs(full_obs: DroneObservation, drone_id: int) -> DroneObservation:
+    """Extracts a specialized observation for a specific drone for single-agent reasoning."""
+    drone = next((d for d in full_obs.drones if d.id == drone_id), full_obs.drones[0])
+    
+    # Calculate single-agent metrics for this specific drone
+    tx, ty = (full_obs.grid_width // 2, 0)
+    if drone.has_package:
+        tx, ty = (full_obs.grid_width // 2, 0)
+    elif drone.target_id is not None and drone.target_id < len(full_obs.targets):
+        tx, ty = full_obs.targets[drone.target_id]
+        
+    dist = ((drone.x - tx)**2 + (drone.y - ty)**2)**0.5
+    
+    # Create a wrapper observation
+    return DroneObservation(
+        **full_obs.model_dump(exclude={"x", "y", "drone_x", "drone_y", "battery", "distance_to_target", "current_target"}),
+        drone_x=drone.x,
+        drone_y=drone.y,
+        battery=drone.battery,
+        distance_to_target=dist,
+        current_target=(tx, ty)
+    )
+
 def get_local_action(obs: DroneObservation, task_id: str) -> NavigationAction:
     """Inference for the fine-tuned Unsloth model."""
     global LOCAL_MODEL, LOCAL_TOKENIZER
@@ -176,26 +199,38 @@ async def run_task(task_id: str, env: DroneDeliveryEnvironment, client: OpenAI, 
         for step in range(1, max_steps + 1):
             if obs.done: break
 
-            # Action Selection
-            if mode == "api":
-                nav_action = get_api_action(client, obs)
-            elif mode == "local":
-                nav_action = get_local_action(obs, task_id)
-            else:
-                h_actions = get_action_from_policy(obs)
-                nav_action = NavigationAction(reasoning="Heuristic Mode", direction=h_actions.get(0, "WAIT"))
+            actions_dict = {}
+            step_reasoning = ""
 
-            # Fallback for WAIT (use heuristic if LLM stalls)
-            if nav_action.direction == "WAIT" or nav_action.direction == "":
-                h_actions = get_action_from_policy(obs)
-                action_str = h_actions.get(0, "WAIT")
-                obs = env.step(DroneAction(actions=h_actions))
-            else:
-                action_str = nav_action.direction
-                obs = env.step(DroneAction(direction=action_str))
+            # Loop through all drones to get actions
+            for drone in obs.drones:
+                drone_obs = get_drone_obs(obs, drone.id)
+                
+                # Action Selection
+                if mode == "api":
+                    nav_action = get_api_action(client, drone_obs)
+                elif mode == "local":
+                    nav_action = get_local_action(drone_obs, task_id)
+                else:
+                    # Heuristic mode
+                    h_actions = get_action_from_policy(obs)
+                    nav_action = NavigationAction(reasoning="Heuristic Mode", direction=h_actions.get(drone.id, "WAIT"))
+
+                # Fallback for WAIT (use heuristic if LLM stalls)
+                if nav_action.direction == "WAIT" or nav_action.direction == "":
+                    h_actions = get_action_from_policy(obs)
+                    actions_dict[drone.id] = h_actions.get(drone.id, "WAIT")
+                else:
+                    actions_dict[drone.id] = nav_action.direction
+                
+                if drone.id == 0:
+                    step_reasoning = f"D0: {nav_action.direction} ({nav_action.reasoning[:20]}...)"
+
+            # Execute unified action
+            obs = env.step(DroneAction(actions=actions_dict))
             
             steps_total = step
-            log_step(step=step, action=action_str, reward=float(obs.reward_last), done=bool(obs.done), error=None)
+            log_step(step=step, action=str(actions_dict), reward=float(obs.reward_last), done=bool(obs.done), error=None)
             if obs.done: break
 
         score = float(obs.score) if obs.score is not None else 0.01

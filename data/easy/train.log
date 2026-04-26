@@ -1,0 +1,12 @@
+>>> Neural Training Engine Started [TASK: easy_delivery]
+Episode 0/1500 | Avg Reward: 1.28 | Epsilon: 0.99 (Periodic Save)
+Episode 50/1500 | Avg Reward: 1.69 | Epsilon: 0.77 (Periodic Save)
+Episode 100/1500 | Avg Reward: 1.84 | Epsilon: 0.60 (Periodic Save)
+Episode 150/1500 | Avg Reward: 2.09 | Epsilon: 0.47 (Periodic Save)
+Episode 200/1500 | Avg Reward: 2.62 | Epsilon: 0.36 (Periodic Save)
+Episode 250/1500 | Avg Reward: 2.40 | Epsilon: 0.28 (Periodic Save)
+Episode 300/1500 | Avg Reward: 2.26 | Epsilon: 0.22 (Periodic Save)
+Episode 350/1500 | Avg Reward: 2.70 | Epsilon: 0.17 (Periodic Save)
+Episode 400/1500 | Avg Reward: 2.74 | Epsilon: 0.13 (Periodic Save)
+Episode 450/1500 | Avg Reward: 2.89 | Epsilon: 0.10 (Periodic Save)
+>>> Neural Training Engine Completed

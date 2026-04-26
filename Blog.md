@@ -4,7 +4,7 @@ thumbnail: /blog/assets/drone_env/thumbnail.png
 authors:
 - user: manikandan-n-07
 - user: kaviyarasu2666
-- user: 
+- user: MEGHAPRAVEEN
 ---
 
 <div align="center">
@@ -22,9 +22,165 @@ authors:
 
 **A high-fidelity project for training and evaluating autonomous drone fleets. Featuring a modular architecture, real-time telemetry, and synchronized training logs across the entire ecosystem.**
 
-[**🌐 Live Demo**](https://manikandan-n-07-drone-env.hf.space) · [**📖 API Docs**](http://localhost:8000/docs) · [**📦 PyPI**](https://pypi.org/project/drone-env) · [**🐛 Issues**](https://github.com/manikandan-n-07/drone-env/issues)
 
 </div>
+
+---
+# LINKS
+
+## GitHub
+
+[*https://github.com/manikandan-n-07/drone_env*](https://github.com/manikandan-n-07/drone_env)
+
+---
+
+## Google Colab Notebook
+
+[*https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb*](https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb)
+
+---
+
+## Hugging Face Space
+
+[*https://huggingface.co/spaces/manikandan-n-07/drone_env*](https://huggingface.co/spaces/manikandan-n-07/drone_env)
+
+---
+
+## Technical Blog
+
+[*https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md*](https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md)
+
+---
+
+---
+## 🚀 Command Quick Reference
+
+| Action | Command |
+| :--- | :--- |
+| **Setup Project** | `uv sync` |
+| **Dashboard Server** | `uv run python server/app.py` |
+| **Train Full Fleet** | `uv run python train.py --task all` |
+| **Train Easy (GPU)** | `uv run python train.py --task easy_delivery --episodes 500 --gpu` |
+| **Train Medium (GPU)** | `uv run python train.py --task medium_delivery --episodes 1500 --gpu` |
+| **Train Hard (GPU)** | `uv run python train.py --task hard_delivery --episodes 2500 --gpu` |
+| **Run AI Inference** | `uv run python inference.py` |
+| **Run AI Seperetely Inference** | `uv run python inference.py --task easy_delivery --steps 50` |
+| **Local Validation** | `uv run openenv validate` |
+| **Docker Build** | `docker build -t drone_env .` |
+| **View Folders** | `dir data or dir results` |
+| **Push to GitHub** | `git add . ; git commit -m "update" ; git push origin main` |
+| **Deploy to HF** | `git push hf main` |
+|
+
+---
+
+## Latest openenv-core Version (v0.2.3) Verification
+The environment is synchronized with the latest **OpenEnv Core (v0.2.3)** to ensure full compliance with the Meta Hackathon standards.
+
+<div align="center">
+  <img src="./results/version_verification.png" width="150%" />
+</div>
+
+---
+
+## Training Results & Performance
+
+Below is the evidence of convergence across our three training tiers. These results demonstrate the agent's ability to learn complex navigation strategies from scratch.
+
+### Easy Performance
+<div align="center">
+  <img src="./results/easy/reward_curve.png" width="100%" />
+  <img src="./results/easy/loss_curve.png" width="100%" />
+  <img src="./results/easy/epsilon_curve.png" width="100%" />
+
+---
+
+### Medium Performance
+<div align="center">
+  <img src="./results/medium/reward_curve.png" width="100%" />
+  <img src="./results/medium/loss_curve.png" width="100%" />
+  <img src="./results/medium/epsilon_curve.png" width="100%" />
+  <p><i>Consistent learning curves across different difficulty settings.</i></p>
+</div>
+
+---
+
+### Hard Task Performance
+The hard task involves a large grid with multiple drones and high obstacle density.
+<div align="center">
+  <img src="./results/hard/reward_curve.png" width="100%" />
+  <img src="./results/hard/loss_curve.png" width="100%" />
+  <img src="./results/hard/epsilon_curve.png" width="100%" />
+  <p><i>Left: Reward progression showing steady improvement. Right: Loss curve showing stable convergence.</i></p>
+</div>
+
+---
+
+```
+Targeted Testing: Use --task to choose easy_delivery, medium_delivery, or hard_delivery.
+
+Step Limit: Use --steps 50 to force the simulation to end after 50 steps.
+```
+
+---
+
+## 🛸 The Operational Narrative: Fleet Intelligence in Action
+
+### 📡 Phase 1: The Godown Handshake
+
+When a drone initiates its mission, it first establishes a secure telemetry link with the **Godown (Central Hub)**. As the drone approaches the loading zone, it transmits its current battery level and mechanical health status. The Godown's AI orchestrator confirms the delivery coordinates. Once the cargo is secured, the drone broadcasts a "Mission Active" signal to the central grid. Upon successful delivery, the drone updates the Godown's ledger in real-time, validating the task completion.
+
+
+### Phase 2: Mesh-Network Communication
+
+In the dense airspace of high-difficulty zones, drones are equipped with localized peer-to-peer mesh networking. This allows for real-time swarm intelligence.
+
+**Collision Avoidance**: Drones exchange trajectory intent to navigate narrow corridors without conflict.
+
+**Resource Optimization**: Drones communicate battery levels to the fleet, allowing those with critical power to be prioritized for charging pads.
+
+**Dynamic Pathing**: If one drone detects an obstacle, it broadcasts the coordinate "blackout" to all nearby units, ensuring the entire fleet adapts instantly.
+
+---
+
+---
+## Genetic AI Brain (Unsloth-Powered)
+
+When you run with `--unsloth`, the drone transitions from a simple "if-else" agent to a **Reasoning Agent**.
+
+| Component | Technical Specification |
+| :--- | :--- |
+| **Base Model** | Unsloth Llama-3 (8B) - 4-bit Quantized |
+| **Training Technique** | QLoRA (Rank 16, Alpha 32) |
+| **Context Window** | 2,048 Tokens |
+| **Optimization** | 2.5x Faster via Unsloth Trition Kernels |
+| **Output Path** | `outputs/drone_llm_adapter/` |
+
+### How it Works
+1. **Teacher Stage (RL):** The DQN agent solves the delivery task using trial-and-error.
+2. **Distillation Stage:** The expert paths are converted into Alpaca-style instructions.
+3. **Reasoning Stage:** The LLM is fine-tuned to explain *why* it makes a move (e.g., "Moving LEFT to avoid collision with Drone 2 while battery is low").
+
+---
+
+## The Drone Brain Pipeline: RL + Unsloth
+
+SkyRelic now features a **dual-stage intelligence pipeline** that bridges the gap between raw coordination and high-level reasoning.
+
+### Stage 1: The Expert (RL Experience)
+We first use **Reinforcement Learning (DQN)** to let the drones "play" the mission. They explore millions of possibilities, learn from crashes, and eventually find the most efficient paths. These "perfect flights" are saved as **Expert Trajectories** in `data/memory.json`.
+| Configuration | Command |
+| :--- | :--- |
+| **Train + Unsloth (Full)** | `uv run python train.py --task all --unsloth --gpu` |
+| **Train Easy + Unsloth** | `uv run python train.py --task easy_delivery --episodes 500 --unsloth --gpu` |
+| **Train Medium + Unsloth** | `uv run python train.py --task medium_delivery --episodes 1500 --unsloth --gpu` |
+| **Train Hard + Unsloth** | `uv run python train.py --task hard_delivery --episodes 2500 --unsloth --gpu` |
+
+### Stage 2: The Reasoning (Unsloth Fine-Tuning)
+We then use **Unsloth** to "teach" those expert paths to a Large Language Model (like Llama-3). 
+*   **Speed**: Unsloth makes this fine-tuning **2x faster** and uses **70% less VRAM**.
+*   **From Math to Logic**: While the RL agent only understands numbers, the Unsloth-trained LLM understands **navigation logic**. It can explain its moves (e.g., *"Choosing LEFT to avoid the building at (4,2) while my battery is at 45%"*).
+*   **One-Click Pipeline**: Run `python train.py --unsloth` to collect data and fine-tune the LLM in a single pass.
 
 ---
 
