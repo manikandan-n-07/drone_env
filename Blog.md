@@ -1,6 +1,6 @@
 ---
 title: "SkyRelic Multi-Agent Drone Delivery Environment"
-thumbnail: /blog/assets/drone_env/thumbnail.png
+thumbnail: assets/drone_env/thumbnail.svg
 authors:
 - user: manikandan-n-07
 - user: kaviyarasu2666
@@ -36,7 +36,13 @@ authors:
 
 ## Google Colab Notebook
 
-[*https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb*](https://github.com/manikandan-n-07/drone_env/blob/main/drone_env.ipynb)
+For Direct Access :
+[*https://colab.research.google.com/drive/1qpo6WulIqArisXmfSJJ8V-INTHMMfCyB?usp=sharing*](https://colab.research.google.com/drive/1qpo6WulIqArisXmfSJJ8V-INTHMMfCyB?usp=sharing)
+
+---
+
+For Github Directory :
+[*https://github.com/manikandan-n-07/drone_env/blob/main/colab_notebook/drone_env.ipynb*](https://github.com/manikandan-n-07/drone_env/blob/main/colab_notebook/drone_env.ipynb)
 
 ---
 
@@ -48,7 +54,7 @@ authors:
 
 ## Technical Blog
 
-[*https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md*](https://github.com/manikandan-n-07/drone_env/blob/main/Blog.md)
+[*https://huggingface.co/spaces/manikandan-n-07/drone_env/blob/main/Blog.md*](https://huggingface.co/spaces/manikandan-n-07/drone_env/blob/main/Blog.md)
 
 ---
 
@@ -92,6 +98,7 @@ Below is the evidence of convergence across our three training tiers. These resu
   <img src="./results/easy/reward_curve.png" width="100%" />
   <img src="./results/easy/loss_curve.png" width="100%" />
   <img src="./results/easy/epsilon_curve.png" width="100%" />
+</div>
 
 ---
 

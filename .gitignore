@@ -34,5 +34,6 @@ test_output.txt
 # Training Artifacts
 *.pth
 *.ipynb
+!colab_notebook/*.ipynb
 *.ipynb_checkpoints/
 .DS_Store
