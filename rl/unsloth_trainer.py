@@ -13,13 +13,25 @@ from unsloth import FastLanguageModel
 from trl import SFTTrainer
 from transformers import TrainingArguments
 
+# Disable W&B logging to prevent interactive prompts in Colab
+os.environ["WANDB_DISABLED"] = "true"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 # --- Configuration ---
 MODEL_NAME = "unsloth/llama-3-8b-bnb-4bit"
 MAX_SEQ_LENGTH = 2048
 LOAD_IN_4BIT = True
-OUTPUT_DIR = "outputs/drone_llm_adapter"
+OUTPUT_DIR = "outputs/drone_fleet_adapter"
 
 # --- Data Preparation ---
+
+def get_reasoning(drone_pos, target_pos, action):
+    """Generates a simple reasoning string for the drone's action."""
+    dx = target_pos[0] - drone_pos[0]
+    dy = target_pos[1] - drone_pos[1]
+    
+    reasoning = f"The target is {'East' if dx > 0 else 'West' if dx < 0 else 'aligned'} and {'South' if dy > 0 else 'North' if dy < 0 else 'aligned'}."
+    return f"Reasoning: {reasoning} Action: {action}"
 
 def load_and_format_data(tasks: List[str] = ["easy", "medium", "hard"]) -> List[Dict]:
     """Loads trajectories from memory.json and formats them for ChatML/SFT."""
@@ -28,7 +40,6 @@ def load_and_format_data(tasks: List[str] = ["easy", "medium", "hard"]) -> List[
     for task in tasks:
         mem_path = Path(f"data/{task}/memory.json")
         if not mem_path.exists():
-            print(f"[Skip] No data found for task: {task}")
             continue
             
         with open(mem_path, "r") as f:
@@ -37,33 +48,33 @@ def load_and_format_data(tasks: List[str] = ["easy", "medium", "hard"]) -> List[
         print(f"[Load] Found {len(episodes)} episodes for {task}")
         
         for ep in episodes:
-            # We only train on episodes that achieved at least some success
-            if ep.get("deliveries_done", 0) == 0 and ep.get("total_reward", 0) < 2.0:
+            if ep.get("deliveries_done", 0) == 0 and ep.get("total_reward", 0) < 1.0:
                 continue
                 
-            grid_w = ep["grid_meta"]["width"]
-            grid_h = ep["grid_meta"]["height"]
-            targets = ep["delivery_positions"]
+            grid_w, grid_h = ep["grid_meta"]["width"], ep["grid_meta"]["height"]
             
             for step_data in ep["steps"]:
                 for drone in step_data["drones"]:
-                    # 1. Build the state description
+                    # Get target (simplified for first target)
+                    target = ep["delivery_positions"][0] if ep["delivery_positions"] else (0,0)
+                    
                     state_desc = (
                         f"Environment: {task} delivery task on {grid_w}x{grid_h} grid.\n"
                         f"Current Position: ({drone['x']}, {drone['y']})\n"
+                        f"Target: {target}\n"
                         f"Battery: {drone['battery']:.2f}\n"
-                        f"Targets Remaining: {targets}\n"
-                        f"Current Step: {step_data['step']}"
+                        f"Step: {step_data['step']}"
                     )
                     
-                    # 2. Format as a chat interaction
-                    # Using Alpaca format for simplicity
+                    # Generate Reasoning-enhanced response
+                    response = get_reasoning((drone['x'], drone['y']), target, drone['action'])
+                    
                     prompt = (
                         "Below is an instruction that describes a task, paired with an input that provides further context. "
                         "Write a response that appropriately completes the request.\n\n"
-                        "### Instruction:\nPredict the next optimal navigation action (UP, DOWN, LEFT, RIGHT, or WAIT) for the drone.\n\n"
+                        "### Instruction:\nPredict the next optimal navigation action and explain your reasoning.\n\n"
                         f"### Input:\n{state_desc}\n\n"
-                        f"### Response:\n{drone['action']}"
+                        f"### Response:\n{response}"
                     )
                     
                     all_conversations.append({"text": prompt})
@@ -119,7 +130,7 @@ def train():
             per_device_train_batch_size = 4,
             gradient_accumulation_steps = 4,
             warmup_steps = 10,
-            max_steps = 100, # Adjust based on data size
+            max_steps = 100,
             learning_rate = 2e-4,
             fp16 = not torch.cuda.is_bf16_supported(),
             bf16 = torch.cuda.is_bf16_supported(),
@@ -128,7 +139,7 @@ def train():
             weight_decay = 0.01,
             lr_scheduler_type = "linear",
             seed = 3407,
-            output_dir = "outputs",
+            output_dir = f"outputs/{args.task}", # Task-specific runs
         ),
     )
 
@@ -142,4 +153,13 @@ def train():
     print(f">>> Training Complete. Adapter saved to {OUTPUT_DIR}")
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Drone LLM Finetuning")
+    parser.add_argument("--task", type=str, default="fleet", help="Suffix for the adapter (easy, medium, hard, fleet)")
+    args = parser.parse_args()
+    
+    # Update global output dir structure
+    global OUTPUT_DIR
+    OUTPUT_DIR = f"outputs/{args.task}/adapter"
+    
     train()
